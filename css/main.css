@@ -117,6 +117,7 @@ textarea {
 
 .patterninput {
     width: 300px;
+    text-transform: uppercase;
 }
 
 .promptext {
@@ -159,7 +160,10 @@ textarea {
     margin:1em;
 }
 
-
+ul
+{
+    list-style-type: none;
+}
 
 
 

@@ -15,8 +15,10 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </head>
-    <body>
+    <body ng-app="app">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -26,69 +28,76 @@
             <img class="imgright" src="img/bd.gif">
         </div>
         <br>
-        <div class="inputbox">
+        <div class="inputbox" ng-controller="promptCtrl">
             <p class="promptext">Enter a pattern:</p>
-            <input type="text" class="patterninput" placeholder="[EN]TE[R].A.[PA]TTE[RN]{2,4}">
+
+            <span ng-repeat="i in patt">
+                <input type="text" class="patterninput" ng-model="i.val" placeholder="[EN]TE[R].A.[PA]TTE[RN]{2,4}">
+            </span>
+
             <a href="#" class="promptext">Examples</a>
             <br>
-            <button type="button">add another</button>
+            <button type="button" ng-click="addPatt()" disabled>add another</button>
+            <button type="button" ng-click="clear()">clear</button>
+
 
             <p class="promptext2">Select database:</p>
-            <input type="radio" name="group2" value="uniprot"> UniprotKB
+            <input type="radio" name="group2" value="uniprot" disabled> UniprotKB
             <br>
-            <input type="radio" name="group2" value="ncbibact"> NCBI Bacteria and Virus
+            <input type="radio" name="group2" value="ncbibact" checked="checked"> NCBI Bacteria and Virus
             <br>
-            <button type="button">search</button>
+            <button type="button" ng-click="search()">search</button>
         </div>
-        <div class="resultheader">
-            <span class="promptext">Results:</span>
-            <br>
-            <img src="img/excel.gif" class="exceldl">
-            <a href="#">Download CSV</a>
-        </div>
-        <div class="results">
-            <table>
-                <tr>
-                    <td class="tablecol">
-                        Organism
-                    </td>
-                    <td class="tablecol">
-                        Description
-                    </td>
-                    <td class="tablecol">
-                        Match
-                    </td>
-                    <td class="tablecol">
-                        Length
-                    </td>
-                    <td class="tablecol">
-                        Database
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tablecol">
-                        Results go here
-                    </td>
-                    <td class="tablecol">
-                        Results go here
-                    </td>
-                    <td class="tablecol">
-                        Results go here
-                    </td>
-                    <td class="tablecol">
-                        Results go here
-                    </td>
-                    <td class="tablecol">
-                        Results go here
-                    </td>
-                </tr>
-            </table>
-            <p class="pagination">
-                <-- < | 1 | 2 | 3 | 4 | > -->
-            </p>
+        <div class="resultcontainer" ng-controller="resCtrl" ng-show="results">
+            <div class="resultheader">
+                <span class="promptext">Results:</span>
+                <br>
+                <img src="img/excel.gif" class="exceldl">
+                <a href="#">Download CSV</a>
+            </div>
+            <div class="results">
+                <table>
+                    <tr>
+                        <td class="tablecol">
+                            Organism
+                        </td>
+                        <td class="tablecol">
+                            Description
+                        </td>
+                        <td class="tablecol">
+                            Match
+                        </td>
+                        <td class="tablecol">
+                            Length
+                        </td>
+                        <td class="tablecol">
+                            Database
+                        </td>
+                    </tr>
+                    <tr ng-repeat="result in results.res">
+                        <td class="tablecol">
+                            {{result.org}}
+                        </td>
+                        <td class="tablecol">
+                            {{result.desc}}
+                        </td>
+                        <td class="tablecol">
+                            {{matchRng(result.seq,results.query)}}
+                        </td>
+                        <td class="tablecol">
+                            {{result.seq.length}}
+                        </td>
+                        <td class="tablecol">
+                            {{result.db}}
+                        </td>
+                    </tr>
+                </table>
+                <p class="pagination">
+                    <-- < | 1 | 2 | 3 | 4 | > -->
+                </p>
+            </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
