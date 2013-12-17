@@ -112,6 +112,8 @@ textarea {
     background: #f9f9f9;
     padding: 1em;
     width: 420px;
+    height: 320px;
+    float: left;
     margin-bottom: 1em;
 }
 
@@ -165,7 +167,10 @@ ul
     list-style-type: none;
 }
 
-
+#chart svg {
+    height: 400px;
+    width: 400px;
+}
 
 
 

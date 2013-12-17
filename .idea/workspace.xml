@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387222059255" ignored="false" />
-    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387230894591" ignored="false" />
-    <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387231489163" ignored="false" />
+    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387319172639" ignored="false" />
+    <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387320111352" ignored="false" />
+    <file path="$PROJECT_DIR$/../D3/piechart/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300482941" ignored="false" />
+    <file path="$PROJECT_DIR$/../D3/piechart/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300772921" ignored="false" />
+    <file path="$PROJECT_DIR$/../D3/piechart/css/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300580171" ignored="false" />
+    <file path="/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387301743284" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularStuff/pagination/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387314076274" ignored="false" />
+    <file path="$PROJECT_DIR$/../AngularStuff/pagination/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387319744730" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +41,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="20" selection-start="4070" selection-end="4099" vertical-scroll-proportion="-7.923077">
+            <state line="99" column="74" selection-start="4172" selection-end="4172" vertical-scroll-proportion="-4.75">
               <folding />
             </state>
           </provider>
@@ -42,7 +50,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="30" selection-start="2205" selection-end="2205" vertical-scroll-proportion="0.0">
+            <state line="247" column="63" selection-start="4054" selection-end="4054" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -51,7 +59,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="4" selection-start="7743" selection-end="7743" vertical-scroll-proportion="0.94863015">
+            <state line="174" column="0" selection-start="11249" selection-end="11249" vertical-scroll-proportion="1.1284246">
               <folding />
             </state>
           </provider>
@@ -82,9 +90,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1781" />
-    <option name="y" value="232" />
-    <option name="width" value="1172" />
+    <option name="x" value="184" />
+    <option name="y" value="144" />
+    <option name="width" value="1170" />
     <option name="height" value="752" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -131,34 +139,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Protomapper-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Protomapper-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Protomapper-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Protomapper-ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -166,9 +146,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AngularStuff" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -181,13 +169,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1781" y="232" width="1172" height="752" extended-state="0" />
+    <frame x="184" y="144" width="1170" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24934612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24978165" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -263,23 +251,23 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="30" selection-start="2205" selection-end="2205" vertical-scroll-proportion="0.0">
+        <state line="99" column="74" selection-start="4172" selection-end="4172" vertical-scroll-proportion="-4.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="20" selection-start="4070" selection-end="4099" vertical-scroll-proportion="-7.923077">
+        <state line="247" column="63" selection-start="4054" selection-end="4054" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="4" selection-start="7743" selection-end="7743" vertical-scroll-proportion="0.94863015">
+        <state line="174" column="0" selection-start="11249" selection-end="11249" vertical-scroll-proportion="1.1284246">
           <folding />
         </state>
       </provider>

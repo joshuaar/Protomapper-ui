@@ -14,9 +14,14 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/nv.d3.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- D3 and NV for pie graph -->
+        <script src="js/d3.v2.js"></script>
+        <script src="js/nv.d3.js"></script>
+        <link rel="stylesheet" href="css/nv.d3.min.css">
     </head>
     <body ng-app="app">
         <!--[if lt IE 7]>
@@ -48,12 +53,19 @@
             <br>
             <button type="button" ng-click="search()">search</button>
         </div>
+
+        <div id="chart">
+            <svg></svg>
+        </div>
+
         <div class="resultcontainer" ng-controller="resCtrl" ng-show="results">
+
             <div class="resultheader">
                 <span class="promptext">Results:</span>
                 <br>
-                <img src="img/excel.gif" class="exceldl">
-                <a href="#">Download CSV</a>
+                <!--PUT DOWNLOAD HERE-->
+                <!--<img src="img/excel.gif" class="exceldl">-->
+                <!--<a href="#">Download CSV</a>-->
             </div>
             <div class="results">
                 <table>
@@ -92,9 +104,8 @@
                         </td>
                     </tr>
                 </table>
-                <p class="pagination">
-                    <-- < | 1 | 2 | 3 | 4 | > -->
-                </p>
+                <pagination ng-controller="paginationCtrl">
+                </pagination>
             </div>
         </div>
 
