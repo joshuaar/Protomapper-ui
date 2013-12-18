@@ -47,7 +47,7 @@
 
 
             <p class="promptext2">Select database:</p>
-            <input type="radio" name="group2" value="uniprot" disabled> UniprotKB
+            <input type="radio" name="group2" value="uniprot" disabled> UniprotKB (coming soon)
             <br>
             <input type="radio" name="group2" value="ncbibact" checked="checked"> NCBI Bacteria and Virus
             <br>
@@ -58,10 +58,10 @@
             <svg></svg>
         </div>
 
-        <div class="resultcontainer" ng-controller="resCtrl" ng-show="results">
+        <div class="resultcontainer" ng-controller="resCtrl" ng-show="showRes">
 
             <div class="resultheader">
-                <span class="promptext">Results:</span>
+                <span class="promptext">Search Returned {{results.num}} Results:</span>
                 <br>
                 <!--PUT DOWNLOAD HERE-->
                 <!--<img src="img/excel.gif" class="exceldl">-->
