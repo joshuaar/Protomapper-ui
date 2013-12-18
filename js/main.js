@@ -1,4 +1,4 @@
-var app = angular.module('app', [])
+var app = angular.module('app', ['ui.bootstrap'])
 
 app.service('results', function($rootScope) {
     var results = {};
@@ -112,7 +112,7 @@ var resCtrl = function($scope,results) {
     }
 }
 
-app.directive('pagination', function() {
+app.directive('p2pagination', function() {
     return {
         restrict: "AE",
         template: ['<div class="pagination">',
@@ -146,7 +146,28 @@ var getPageVector = function(nPages,curpage,maxDisplay) {
     return out.sort(function(a,b){return a-b}).slice(0,Math.min(maxDisplay,nPages))
 }
 
-var paginationCtrl = function($scope, results) {
+
+var paginationCtrl = function ($scope, results) {
+    $scope.results = results.get()
+    $scope.$on('resultsChanged', function(event,res){
+        $scope.results = res
+        $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
+    })
+
+
+    $scope.totalItems = $scope.results.num;
+    $scope.itemsPerPage = 50;
+    $scope.currentPage = 1;
+    $scope.maxSize = 5;
+
+    $scope.setPage = function (pageNo) {
+        $scope.currentPage = pageNo;
+        results.getFromServer($scope.results.query,(pageNo-1)*itemsPerPage,pageNo*itemsPerPage)
+
+    };
+};
+
+var p2paginationCtrl = function($scope, results) {
     $scope.results = results.get()
     $scope.page = 1
     $scope.resPerPage = 50

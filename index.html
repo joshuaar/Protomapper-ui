@@ -22,6 +22,8 @@
         <script src="js/d3.v2.js"></script>
         <script src="js/nv.d3.js"></script>
         <link rel="stylesheet" href="css/nv.d3.min.css">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
     </head>
     <body ng-app="app">
         <!--[if lt IE 7]>
@@ -58,7 +60,7 @@
             <svg></svg>
         </div>
 
-        <div class="resultcontainer" ng-controller="resCtrl" ng-show="showRes">
+        <div class="resultcontainer" ng-controller="resCtrl" ng-show="true">
 
             <div class="resultheader">
                 <span class="promptext">Search Returned {{results.num}} Results:</span>
@@ -104,14 +106,16 @@
                         </td>
                     </tr>
                 </table>
-                <pagination ng-controller="paginationCtrl">
-                </pagination>
+                <pagination ng-controller="paginationCtrl" boundary-links="true" total-items="totalItems" page="currentPage" class="pagination-small" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
             </div>
         </div>
 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
+
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
