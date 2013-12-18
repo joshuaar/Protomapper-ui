@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387343569144" ignored="false" />
     <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387344962705" ignored="false" />
-    <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387345117763" ignored="false" />
+    <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387346493931" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300482941" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300772921" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/css/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300580171" ignored="false" />
@@ -57,7 +55,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="29" selection-start="5020" selection-end="5020" vertical-scroll-proportion="0.5794392">
+            <state line="171" column="82" selection-start="5483" selection-end="5483" vertical-scroll-proportion="0.7396529">
               <folding />
             </state>
           </provider>
@@ -88,8 +86,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1993" />
-    <option name="y" value="183" />
+    <option name="x" value="2044" />
+    <option name="y" value="148" />
     <option name="width" value="1685" />
     <option name="height" value="946" />
   </component>
@@ -167,7 +165,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1993" y="183" width="1685" height="946" extended-state="0" />
+    <frame x="2044" y="148" width="1685" height="946" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -286,7 +284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="29" selection-start="5020" selection-end="5020" vertical-scroll-proportion="0.5794392">
+        <state line="171" column="82" selection-start="5483" selection-end="5483" vertical-scroll-proportion="0.7396529">
           <folding />
         </state>
       </provider>

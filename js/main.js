@@ -149,22 +149,31 @@ var getPageVector = function(nPages,curpage,maxDisplay) {
 
 var paginationCtrl = function ($scope, results) {
     $scope.results = results.get()
-    $scope.$on('resultsChanged', function(event,res){
-        $scope.results = res
-        $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
-    })
-
 
     $scope.totalItems = $scope.results.num;
     $scope.itemsPerPage = 50;
     $scope.currentPage = 1;
     $scope.maxSize = 5;
 
+    $scope.$on('resultsChanged', function(event,res){
+        $scope.results = res
+        $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
+        $scope.totalItems = $scope.results.num;
+        $scope.currentPage = Math.floor($scope.results.rng[0]/$scope.itemsPerPage)+1
+    })
+
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
         results.getFromServer($scope.results.query,(pageNo-1)*itemsPerPage,pageNo*itemsPerPage)
 
     };
+    $scope.$watch("currentPage", function(){
+        $scope.setPage($scope.currentPage)
+    })
+
+
+
+
 };
 
 var p2paginationCtrl = function($scope, results) {
