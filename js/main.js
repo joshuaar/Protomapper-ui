@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ui.bootstrap','ngGrid'])
-
+var webroot = ""
 app.service('results', function($rootScope) {
     var results = {};
     return {
@@ -12,7 +12,7 @@ app.service('results', function($rootScope) {
             return results
         },
         getFromServer: function(queryJSON,frm,to){
-            $.getJSON("/query?q="+queryJSON+"&r="+frm+"%%"+to,function(data){
+            $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(data){
                 console.log("Got results from server")
                 results = data
                 $rootScope.$broadcast("resultsChanged",data)
@@ -109,7 +109,7 @@ var resCtrl = function($scope,results) {
 	$scope.showRes = true;
 	//console.log(res.num+" NUM")
 	$scope.$apply()
-	$.getJSON("/summary?q="+res.query,function(data){
+	$.getJSON(webroot+"/summary?q="+res.query,function(data){
 	    putChart(data)
             console.log("got summary from server")
         })
@@ -206,8 +206,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
         currentPage: 1
     };
     $scope.setPagingData = function(data, page, pageSize){
-        var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
-        $scope.myData = pagedData;
+        $scope.myData = data;
         $scope.totalServerItems = data.length;
         if (!$scope.$$phase) {
             $scope.$apply();
@@ -216,19 +215,11 @@ app.controller('GridCtrl', function($scope, $http, results) {
     $scope.getPagedDataAsync = function (pageSize, page, searchText) {
         setTimeout(function () {
             var data;
-            if (searchText) {
-                var ft = searchText.toLowerCase();
-                $http.get('jsonFiles/largeLoad.json').success(function (largeLoad) {
-                    data = largeLoad.filter(function(item) {
-                        return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
-                    });
-                    $scope.setPagingData(data,page,pageSize);
-                });
-            } else {
-                $http.get('jsonFiles/largeLoad.json').success(function (largeLoad) {
-                    $scope.setPagingData(largeLoad,page,pageSize);
-                });
-            }
+            var frm = (page-1)*pageSize
+            var to = (page*pageSize)-1
+            $http.get("/query?q="+searchText+"&r="+frm+"%%"+to).success(function (largeLoad) {
+                $scope.setPagingData(largeLoad["res"],page,pageSize);
+            });
         }, 100);
     };
 
