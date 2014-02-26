@@ -33,7 +33,14 @@ var promptCtrl = function($scope,results) {
     }
     $scope.search = function() {
         //Get JSON here
-        results.getFromServer($scope.patt[0].val,0,50)
+        results.getFromServer($scope.patt[0].val.toUpperCase(),0,50)
+    }
+    curEx = 0 
+    $scope.examples = function() {
+        console.log("examples invoked")
+        var ex = ["AVH[NEA]DY","KLH.{2,4}GEA","AVHAD","AVNFKY"]
+        $scope.patt[0].val = ex[curEx % ex.length] 
+        curEx+=1
     }
 
 }
@@ -152,7 +159,7 @@ var paginationCtrl = function ($scope, results) {
 
     $scope.totalItems = $scope.results.num;
     $scope.itemsPerPage = 50;
-    $scope.currentPage = 1;
+    $scope.currentPage = 0;
     $scope.maxSize = 5;
 
     $scope.$on('resultsChanged', function(event,res){
@@ -160,15 +167,17 @@ var paginationCtrl = function ($scope, results) {
         $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
         $scope.totalItems = $scope.results.num;
         $scope.currentPage = Math.floor($scope.results.rng[0]/$scope.itemsPerPage)+1
+	$scope.$apply()
     })
 
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
-        results.getFromServer($scope.results.query,(pageNo-1)*itemsPerPage,pageNo*itemsPerPage)
+        results.getFromServer($scope.results.query,(pageNo-1)*$scope.itemsPerPage,pageNo*$scope.itemsPerPage)
 
     };
     $scope.$watch("currentPage", function(){
-        $scope.setPage($scope.currentPage)
+	if(!$scope.currentPage == 0)
+            $scope.setPage($scope.currentPage)
     })
 
 
@@ -176,40 +185,3 @@ var paginationCtrl = function ($scope, results) {
 
 };
 
-var p2paginationCtrl = function($scope, results) {
-    $scope.results = results.get()
-    $scope.page = 1
-    $scope.resPerPage = 50
-    $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
-    $scope.pages = 1
-    $scope.$on('resultsChanged', function(event,res){
-        $scope.results = res
-        $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
-    })
-
-    $scope.fst = function(){
-        $scope.goto(1)
-    }
-    $scope.last = function(){
-
-        $scope.goto($scope.nPages)
-    }
-    $scope.next = function(){
-        if($scope.page+1 <= $scope.nPages)
-            $scope.goto($scope.page+1)
-    }
-    $scope.prev = function(){
-        if($scope.page-1 > 0){
-            $scope.goto($scope.page-1)
-        }
-    }
-    $scope.goto = function(page){
-        $scope.pages = getPageVector($scope.nPages,page,10)
-        $scope.page = page
-        var frm = page*$scope.resPerPage - $scope.resPerPage
-        var to = page*$scope.resPerPage
-        //Server request here
-        results.getFromServer($scope.results.query,0,50)
-        //results.set({"num":$scope.results.num,"rng":[frm,to],"page":page})
-    }
-};

@@ -37,13 +37,12 @@
         <br>
         <div class="inputbox" ng-controller="promptCtrl">
             <p class="promptext">Enter a pattern:</p>
-
             <span ng-repeat="i in patt">
                 <input type="text" class="patterninput" ng-model="i.val" placeholder="[EN]TE[R].A.[PA]TTE[RN]{2,4}">
+
+            <a href="#" class="promptext" ng-click="examples()">Examples</a>
             </span>
 
-            <a href="#" class="promptext">Examples</a>
-            <br>
             <button type="button" ng-click="addPatt()" disabled>add another</button>
             <button type="button" ng-click="clear()">clear</button>
 
@@ -60,11 +59,12 @@
             <svg></svg>
         </div>
 
-        <div class="resultcontainer" ng-controller="resCtrl" ng-show="true">
+        <div class="resultcontainer" ng-controller="resCtrl" ng-show="showRes">
 
-            <div class="resultheader">
                 <span class="promptext">Search Returned {{results.num}} Results:</span>
+            <div class="resultheader">
                 <br>
+
                 <!--PUT DOWNLOAD HERE-->
                 <!--<img src="img/excel.gif" class="exceldl">-->
                 <!--<a href="#">Download CSV</a>-->
@@ -106,7 +106,7 @@
                         </td>
                     </tr>
                 </table>
-                <pagination ng-controller="paginationCtrl" boundary-links="true" total-items="totalItems" page="currentPage" class="pagination-small" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                <pagination ng-controller="paginationCtrl" boundary-links="true" max-size="maxSize" total-items="totalItems" page="currentPage" class="pagination-small" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
             </div>
         </div>
 
