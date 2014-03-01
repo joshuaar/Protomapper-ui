@@ -217,7 +217,7 @@ app.controller('GridCtrl', function($scope, $http,ngTableParams,results) {
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
     $http.get('/query?q=AVHAD&r=0%%50').success(function (largeLoad) {
-         deta = largeLoad
+         deta = largeLoad["res"]
         $scope.$apply()
     });
     $scope.tableParams = new ngTableParams({
