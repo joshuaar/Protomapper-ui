@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-    </list>
+    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="" />
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393705851147" ignored="false" />
@@ -206,7 +204,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="742" extended-state="0" />
+    <frame x="-1" y="0" width="1368" height="742" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
