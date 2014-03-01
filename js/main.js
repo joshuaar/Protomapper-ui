@@ -197,7 +197,7 @@ var paginationCtrl = function ($scope, results) {
 };
 
 //Grid with pagination for results
-app.controller('GridCtrl', function($scope, ngTableParams,results) {
+app.controller('GridCtrl', function($scope, $http,ngTableParams,results) {
 
     var data = [{name: "Moroni", age: 50},
         {name: "Tiancum", age: 43},
