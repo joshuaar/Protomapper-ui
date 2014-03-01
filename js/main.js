@@ -216,7 +216,9 @@ app.controller('GridCtrl', function($scope, ngTableParams,results) {
         {name: "Jacob", age: 27},
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
-
+    $http.get('/query?q=AVHAD&r=0%%50').success(function (largeLoad) {
+         deta = largeLoad
+    });
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10           // count per page
