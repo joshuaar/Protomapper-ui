@@ -217,11 +217,6 @@ app.controller('GridCtrl', function($scope, ngTableParams,results) {
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
 
-    $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(results){
-        console.log("Got results from server")
-        data = results["res"]
-        $rootScope.$broadcast("resultsChanged",data)
-    })
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10           // count per page
