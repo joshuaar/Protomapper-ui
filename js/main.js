@@ -197,7 +197,7 @@ var paginationCtrl = function ($scope, results) {
 };
 
 //Grid with pagination for results
-app.controller('GridCtrl', function($scope, $http,ngTableParams,results) {
+app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
 
     var data = [{name: "Moroni", age: 50},
         {name: "Tiancum", age: 43},
@@ -217,8 +217,7 @@ app.controller('GridCtrl', function($scope, $http,ngTableParams,results) {
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
     $http.get('/query?q=AVHAD&r=0%%50').success(function (largeLoad) {
-         deta = largeLoad["res"]
-        $scope.$apply()
+         data = largeLoad["res"]
     });
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
