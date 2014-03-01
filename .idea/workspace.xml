@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/largeLoad.json.js" afterPath="$PROJECT_DIR$/js/largeLoad.json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="0.8048327">
+            <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="-21.791666">
               <folding>
                 <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
               </folding>
@@ -73,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="largeLoad.json.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="largeLoad.json.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/largeLoad.json.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="24" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0">
+            <state line="418" column="57" selection-start="23368" selection-end="23368" vertical-scroll-proportion="0.9478261">
               <folding />
             </state>
           </provider>
@@ -101,10 +102,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/largeLoad.json.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/grid.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/largeLoad.json.js" />
       </list>
     </option>
   </component>
@@ -397,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/largeLoad.json.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="226" column="20" selection-start="7421" selection-end="7421" vertical-scroll-proportion="0.0">
@@ -420,10 +414,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="0.8048327">
+        <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="-21.791666">
           <folding>
             <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/largeLoad.json.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="418" column="57" selection-start="23368" selection-end="23368" vertical-scroll-proportion="0.9478261">
+          <folding />
         </state>
       </provider>
     </entry>
