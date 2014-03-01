@@ -221,7 +221,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
-                $http.get('jsonFiles/largeLoad.json').success(function (largeLoad) {
+                $http.get("/query?q=AVHAD&r=0%%50").success(function (largeLoad) {
                     data = largeLoad.filter(function(item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
