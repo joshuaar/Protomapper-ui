@@ -198,40 +198,40 @@ var paginationCtrl = function ($scope, results) {
 
 //Grid with pagination for results
 app.controller('GridCtrl', function($scope, $http, results) {
-    $scope.myData = [{name: "Moroni", age: 50},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34}]
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
     };
     $scope.totalServerItems = 0;
     $scope.pagingOptions = {
-        pageSizes: [250, 500, 1000],
-        pageSize: 250,
+        pageSizes: [5, 10, 20],
+        pageSize: 5,
         currentPage: 1
     };
     $scope.setPagingData = function(data, page, pageSize){
-        console.log("setting paged data"+ ": "+data.length)
-        $scope.myData = [{name: "Moroni", age: 5},
-            {name: "Tiancum", age: 43},
-            {name: "Jacob", age: 27},
-            {name: "Neph", age: 29},
-            {name: "Enos", age: 30}];
-        console.log($scope.myData[0])
-        $scope.totalServerItems = 5;
-
-        console.log("set page data")
+        var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
+        $scope.myData = pagedData;
+        $scope.totalServerItems = data.length;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
     };
     $scope.getPagedDataAsync = function (pageSize, page, searchText) {
         setTimeout(function () {
-            $http.get("/query?q=AVHAD&r=0%%50").success(function (queryRes) {
-                console.log("got pagination query results")
-                $scope.setPagingData(queryRes["res"],page,pageSize);
-
-            });
+            var data;
+            if (searchText) {
+                var ft = searchText.toLowerCase();
+                $http.get('largeLoad.json').success(function (largeLoad) {
+                    data = largeLoad.filter(function(item) {
+                        return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
+                    });
+                    $scope.setPagingData(data,page,pageSize);
+                });
+            } else {
+                $http.get('largeLoad.json').success(function (largeLoad) {
+                    $scope.setPagingData(largeLoad,page,pageSize);
+                });
+            }
         }, 100);
     };
 
@@ -252,7 +252,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
         data: 'myData',
         enablePaging: true,
         showFooter: true,
-        totalServerItems: 'totalServerItems',
+        totalServerItems:'totalServerItems',
         pagingOptions: $scope.pagingOptions,
         filterOptions: $scope.filterOptions
     };
