@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-    </list>
+    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="" />
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393705851147" ignored="false" />
@@ -16,6 +13,7 @@
     <file path="/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387301743284" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387314076274" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387319744730" ignored="false" />
+    <file path="/grid.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393715542556" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +36,19 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="32" selection-start="5013" selection-end="5013" vertical-scroll-proportion="-14.291667">
+            <state line="30" column="36" selection-start="0" selection-end="5827" vertical-scroll-proportion="-12.416667">
               <folding>
                 <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="24" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.5716878">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="65" selection-start="6457" selection-end="6457" vertical-scroll-proportion="0.11921708">
+            <state line="226" column="20" selection-start="7421" selection-end="7421" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,6 +102,7 @@
         <option value="$PROJECT_DIR$/js/largeLoad.json.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/grid.html" />
       </list>
     </option>
   </component>
@@ -183,6 +191,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AngularStuff" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -393,18 +402,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="20" selection-start="7421" selection-end="7421" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="32" selection-start="5013" selection-end="5013" vertical-scroll-proportion="-14.291667">
+        <state line="30" column="36" selection-start="0" selection-end="5827" vertical-scroll-proportion="-12.416667">
           <folding>
             <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/grid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="65" selection-start="6457" selection-end="6457" vertical-scroll-proportion="0.11921708">
+        <state line="30" column="24" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.5716878">
           <folding />
         </state>
       </provider>
