@@ -230,7 +230,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
                     $scope.setPagingData(data,page,pageSize);
                 });
             } else {
-                $http.get('largeLoad.json').success(function (largeLoad) {
+                $http.get('js/largeLoad.json').success(function (largeLoad) {
                     $scope.setPagingData(largeLoad,page,pageSize);
                 });
             }
