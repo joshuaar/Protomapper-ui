@@ -215,6 +215,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
         if (!$scope.$$phase) {
             $scope.$apply();
         }
+        console.log("set page data")
     };
     $scope.getPagedDataAsync = function (pageSize, page, searchText) {
         setTimeout(function () {
