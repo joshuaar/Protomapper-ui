@@ -209,7 +209,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
         currentPage: 1
     };
     $scope.setPagingData = function(data, page, pageSize){
-        console.log("setting paged data")
+        console.log("setting paged data"+ ": "+data.length)
         $scope.myData = data;
         $scope.totalServerItems = data.length;
         if (!$scope.$$phase) {
