@@ -58,7 +58,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="220" column="27" selection-start="7209" selection-end="7209" vertical-scroll-proportion="0.78647685">
+            <state line="218" column="4" selection-start="7054" selection-end="7054" vertical-scroll-proportion="0.73309606">
               <folding />
             </state>
           </provider>
@@ -230,7 +230,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="742" extended-state="1" />
+    <frame x="-1" y="0" width="1368" height="742" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -413,7 +413,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="27" selection-start="7209" selection-end="7209" vertical-scroll-proportion="0.78647685">
+        <state line="218" column="4" selection-start="7054" selection-end="7054" vertical-scroll-proportion="0.73309606">
           <folding />
         </state>
       </provider>

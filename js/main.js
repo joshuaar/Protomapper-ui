@@ -216,6 +216,7 @@ app.controller('GridCtrl', function($scope, ngTableParams,results) {
         {name: "Jacob", age: 27},
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
+
     $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(results){
         console.log("Got results from server")
         data = results["res"]
