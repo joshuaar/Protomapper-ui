@@ -221,10 +221,9 @@ app.controller('GridCtrl', function($scope, $http, results) {
             {name: "Neph", age: 29},
             {name: "Enos", age: 30}];
         console.log($scope.myData[0])
-        $scope.totalServerItems = data.length;
-        if (!$scope.$$phase) {
-            $scope.$apply();
-        }
+        $scope.totalServerItems = 5;
+        $scope.$apply();
+
         console.log("set page data")
     };
     $scope.getPagedDataAsync = function (pageSize, page, searchText) {
