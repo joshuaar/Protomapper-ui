@@ -221,6 +221,8 @@ app.controller('GridCtrl', function($scope, $http, results) {
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
+                //where the query goes
+                console.log("")
                 $http.get('js/largeLoad.json').success(function (largeLoad) {
                     data = largeLoad.filter(function(item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
