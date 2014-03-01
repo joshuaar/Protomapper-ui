@@ -15,7 +15,7 @@
     <file path="/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387301743284" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387314076274" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387319744730" ignored="false" />
-    <file path="/grid.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393718224987" ignored="false" />
+    <file path="/grid.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393718235424" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <file leaf-file-name="grid.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="45" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.3345725">
+            <state line="30" column="41" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.3345725">
               <folding />
             </state>
           </provider>
@@ -413,7 +413,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="45" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.3345725">
+        <state line="30" column="41" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.3345725">
           <folding />
         </state>
       </provider>
