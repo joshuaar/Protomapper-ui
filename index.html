@@ -117,11 +117,20 @@
         <div ng-controller="GridCtrl">
             <p><strong>Page:</strong> {{tableParams.page()}}</p>
             <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
-
+            <!--// Typical result from server-->
+            <!--//{ "num":515,"rng":[1,2],"query":"AVNFK",-->
+            <!--//    "res":[{-->
+            <!--//    "seq":"MAQAMQMTNVALPTSMDKKTYAVNFKGLIAHLLDILFVDNSAPRSYYAEDLSAHIQKDIGMYR" ,-->
+            <!--//    "acc":"YP_008269995.1" ,-->
+            <!--//    "desc":"gi|525853438|ref|YP_008269995.1| hypothetical protein M636_03730 [Vibrio parahaemolyticus O1:K33 str. CDC_K4557]" ,-->
+            <!--//    "org":"Vibrio parahaemolyticus O1:K33 str. CDC_K4557" ,-->
+            <!--//    "db":"custom" }]-->
+            <!--//}-->
             <table ng-table="tableParams" class="table">
-                <tr ng-repeat="user in $data">
-                    <td data-title="'Name'">{{user.name}}</td>
-                    <td data-title="'Age'">{{user.age}}</td>
+                <tr ng-repeat="prot in $data">
+                    <td data-title="'db'">{{prot.db}}</td>
+                    <td data-title="'acc'">{{prot.acc}}</td>
+                    <td data-title="'org'">{{prot.org}}</td>
                 </tr>
             </table>
         </div>
