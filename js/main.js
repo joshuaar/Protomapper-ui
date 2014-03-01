@@ -210,7 +210,11 @@ app.controller('GridCtrl', function($scope, $http, results) {
     };
     $scope.setPagingData = function(data, page, pageSize){
         console.log("setting paged data"+ ": "+data.length)
-        $scope.myData = data;
+        $scope.myData = [{name: "Moroni", age: 50},
+            {name: "Tiancum", age: 43},
+            {name: "Jacob", age: 27},
+            {name: "Nephi", age: 29},
+            {name: "Enos", age: 34}];
         $scope.totalServerItems = data.length;
         if (!$scope.$$phase) {
             $scope.$apply();
