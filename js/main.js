@@ -220,7 +220,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
         setTimeout(function () {
             $http.get("/query?q=AVHAD&r=0%%50").success(function (largeLoad) {
                 console.log(largeLoad["res"])
-                $scope.setPagingData(largeLoad,page,pageSize);
+                $scope.setPagingData(largeLoad["res"],page,pageSize);
             });
         }, 100);
     };
