@@ -219,7 +219,8 @@ app.controller('GridCtrl', function($scope, $http, results) {
     $scope.getPagedDataAsync = function (pageSize, page, searchText) {
         setTimeout(function () {
             $http.get("/query?q=AVHAD&r=0%%50").success(function (largeLoad) {
-                $scope.setPagingData(largeLoad["res"],page,pageSize);
+                console.log(largeLoad["res"])
+                $scope.setPagingData(largeLoad,page,pageSize);
             });
         }, 100);
     };
