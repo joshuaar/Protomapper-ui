@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.bootstrap','ngGrid'])
+var app = angular.module('app', ['ui.bootstrap','ngTable'])
 var webroot = ""
 app.service('results', function($rootScope) {
     var results = {};
