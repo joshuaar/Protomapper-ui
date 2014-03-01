@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grid.html" afterPath="$PROJECT_DIR$/grid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,21 +35,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="36" selection-start="0" selection-end="5827" vertical-scroll-proportion="-12.416667">
+            <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="0.8048327">
               <folding>
-                <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
+                <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grid.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="grid.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.5297398">
+            <state line="18" column="32" selection-start="906" selection-end="906" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -102,9 +102,9 @@
       <list>
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/largeLoad.json.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/grid.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -325,7 +325,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="69" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
+            <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -348,7 +348,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
+            <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -371,7 +371,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="74" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
+            <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -411,19 +411,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/grid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="36" selection-start="0" selection-end="5827" vertical-scroll-proportion="-12.416667">
-          <folding>
-            <marker date="1393715094332" expanded="true" signature="5811:5826" placeholder="&lt;xml/&gt;" />
-          </folding>
+        <state line="18" column="32" selection-start="906" selection-end="906" vertical-scroll-proportion="-11.25">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grid.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.5297398">
-          <folding />
+        <state line="132" column="0" selection-start="5833" selection-end="5833" vertical-scroll-proportion="0.8048327">
+          <folding>
+            <marker date="1393715960580" expanded="true" signature="5838:5853" placeholder="&lt;xml/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
