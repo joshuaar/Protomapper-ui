@@ -198,6 +198,7 @@ var paginationCtrl = function ($scope, results) {
 
 //Grid with pagination for results
 app.controller('GridCtrl', function($scope, ngTableParams,results) {
+
     var data = [{name: "Moroni", age: 50},
         {name: "Tiancum", age: 43},
         {name: "Jacob", age: 27},
@@ -215,6 +216,11 @@ app.controller('GridCtrl', function($scope, ngTableParams,results) {
         {name: "Jacob", age: 27},
         {name: "Nephi", age: 29},
         {name: "Enos", age: 34}];
+    $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(results){
+        console.log("Got results from server")
+        data = results["res"]
+        $rootScope.$broadcast("resultsChanged",data)
+    })
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10           // count per page
