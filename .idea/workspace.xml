@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="" />
+    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grid.html" afterPath="$PROJECT_DIR$/grid.html" />
+    </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393705851147" ignored="false" />
@@ -13,7 +15,7 @@
     <file path="/main.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387301743284" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387314076274" ignored="false" />
     <file path="$PROJECT_DIR$/../AngularStuff/pagination/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387319744730" ignored="false" />
-    <file path="/grid.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393715542556" ignored="false" />
+    <file path="/grid.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393718224987" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="64" selection-start="6005" selection-end="6005" vertical-scroll-proportion="0.6654275">
+            <state line="9" column="18" selection-start="432" selection-end="436" vertical-scroll-proportion="-2.7551022">
               <folding>
                 <marker date="1393718141128" expanded="true" signature="6483:6498" placeholder="&lt;xml/&gt;" />
               </folding>
@@ -44,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grid.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="grid.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="32" selection-start="906" selection-end="906" vertical-scroll-proportion="-11.25">
+            <state line="30" column="45" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.3345725">
               <folding />
             </state>
           </provider>
@@ -90,10 +92,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/grid.html" />
         <option value="$PROJECT_DIR$/js/largeLoad.json.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/grid.html" />
       </list>
     </option>
   </component>
@@ -393,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="906" selection-end="906" vertical-scroll-proportion="-11.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="0" selection-start="709" selection-end="1126" vertical-scroll-proportion="0.0">
@@ -409,10 +404,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="64" selection-start="6005" selection-end="6005" vertical-scroll-proportion="0.6654275">
+        <state line="9" column="18" selection-start="432" selection-end="436" vertical-scroll-proportion="-2.7551022">
           <folding>
             <marker date="1393718141128" expanded="true" signature="6483:6498" placeholder="&lt;xml/&gt;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="45" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.3345725">
+          <folding />
         </state>
       </provider>
     </entry>
