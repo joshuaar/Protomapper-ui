@@ -1,5 +1,5 @@
-var app = angular.module('app', ['ui.bootstrap'])
-
+var app = angular.module('app', ['ui.bootstrap','ngGrid'])
+var webroot = ""
 app.service('results', function($rootScope) {
     var results = {};
     return {
@@ -12,7 +12,7 @@ app.service('results', function($rootScope) {
             return results
         },
         getFromServer: function(queryJSON,frm,to){
-            $.getJSON("/query?q="+queryJSON+"&r="+frm+"%%"+to,function(data){
+            $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(data){
                 console.log("Got results from server")
                 results = data
                 $rootScope.$broadcast("resultsChanged",data)
@@ -20,7 +20,15 @@ app.service('results', function($rootScope) {
         }
     }
 })
-
+// Typical result from server
+//{ "num":515,"rng":[1,2],"query":"AVNFK",
+//    "res":[{
+//    "seq":"MAQAMQMTNVALPTSMDKKTYAVNFKGLIAHLLDILFVDNSAPRSYYAEDLSAHIQKDIGMYR" ,
+//    "acc":"YP_008269995.1" ,
+//    "desc":"gi|525853438|ref|YP_008269995.1| hypothetical protein M636_03730 [Vibrio parahaemolyticus O1:K33 str. CDC_K4557]" ,
+//    "org":"Vibrio parahaemolyticus O1:K33 str. CDC_K4557" ,
+//    "db":"custom" }]
+//}
 
 
 var promptCtrl = function($scope,results) {
@@ -104,7 +112,7 @@ var resCtrl = function($scope,results) {
 	$scope.showRes = true;
 	//console.log(res.num+" NUM")
 	$scope.$apply()
-	$.getJSON("/summary?q="+res.query,function(data){
+	$.getJSON(webroot+"/summary?q="+res.query,function(data){
 	    putChart(data)
             console.log("got summary from server")
         })
@@ -188,3 +196,55 @@ var paginationCtrl = function ($scope, results) {
 
 };
 
+//Grid with pagination for results
+app.controller('GridCtrl', function($scope, $http, results) {
+    $scope.filterOptions = {
+        filterText: "",
+        useExternalFilter: true
+    };
+    $scope.totalServerItems = 0;
+    $scope.pagingOptions = {
+        pageSizes: [250, 500, 1000],
+        pageSize: 250,
+        currentPage: 1
+    };
+    $scope.setPagingData = function(data, page, pageSize){
+        $scope.myData = data;
+        $scope.totalServerItems = data.length;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    };
+    $scope.getPagedDataAsync = function (pageSize, page, searchText) {
+        setTimeout(function () {
+            var data;
+            var frm = (page-1)*pageSize
+            var to = (page*pageSize)-1
+            $http.get("/query?q="+searchText+"&r="+frm+"%%"+to).success(function (largeLoad) {
+                $scope.setPagingData(largeLoad["res"],page,pageSize);
+            });
+        }, 100);
+    };
+
+    $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+    $scope.$watch('pagingOptions', function (newVal, oldVal) {
+        if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+            $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+        }
+    }, true);
+    $scope.$watch('filterOptions', function (newVal, oldVal) {
+        if (newVal !== oldVal) {
+            $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+        }
+    }, true);
+
+    $scope.gridOptions = {
+        data: 'myData',
+        enablePaging: true,
+        showFooter: true,
+        totalServerItems: 'totalServerItems',
+        pagingOptions: $scope.pagingOptions,
+        filterOptions: $scope.filterOptions
+    };
+});

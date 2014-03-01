@@ -173,7 +173,11 @@ ul
 }
 
 
-
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 400px;
+    height: 300px
+}
 
 
 
@@ -370,3 +374,4 @@ ul
         page-break-after: avoid;
     }
 }
+
