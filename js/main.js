@@ -209,8 +209,8 @@ app.controller('GridCtrl', function($scope, $http, results) {
         currentPage: 1
     };
     $scope.setPagingData = function(data, page, pageSize){
-        var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
-        $scope.myData = pagedData;
+        console.log("setting paged data")
+        $scope.myData = data;
         $scope.totalServerItems = data.length;
         if (!$scope.$$phase) {
             $scope.$apply();
@@ -221,6 +221,7 @@ app.controller('GridCtrl', function($scope, $http, results) {
             $http.get("/query?q=AVHAD&r=0%%50").success(function (largeLoad) {
                 console.log(largeLoad["res"])
                 $scope.setPagingData(largeLoad["res"],page,pageSize);
+
             });
         }, 100);
     };
