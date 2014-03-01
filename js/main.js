@@ -200,23 +200,8 @@ var paginationCtrl = function ($scope, results) {
 app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
 
     var data = [{name: "Moroni", age: 50},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34}];
-    $http.get('/query?q=AVHAD&r=0%%50').success(function (largeLoad) {
+        {name: "Tiancum", age: 43}];
+    $http.get('/query?q=AVHAD&r=0%%5000').success(function (largeLoad) {
          data = largeLoad["res"]
          $scope.tableParams.reload()
     });
