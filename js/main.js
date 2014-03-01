@@ -223,14 +223,14 @@ app.controller('GridCtrl', function($scope, $http, results) {
                 var ft = searchText.toLowerCase();
                 //where the query goes
                 console.log("")
-                $http.get('js/largeLoad.json').success(function (largeLoad) {
+                $http.get('js/largeLoad.json.js').success(function (largeLoad) {
                     data = largeLoad.filter(function(item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
                     $scope.setPagingData(data,page,pageSize);
                 });
             } else {
-                $http.get('js/largeLoad.json').success(function (largeLoad) {
+                $http.get('js/largeLoad.json.js').success(function (largeLoad) {
                     $scope.setPagingData(largeLoad,page,pageSize);
                 });
             }
