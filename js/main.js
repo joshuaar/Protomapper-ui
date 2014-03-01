@@ -33,7 +33,10 @@ var promptCtrl = function($scope,results) {
     }
     $scope.search = function() {
         //Get JSON here
-        results.getFromServer($scope.patt[0].val.toUpperCase(),0,50)
+	qstring = []
+        for(i in $scope.patt)
+            qstring=qstring.concat($scope.patt[i].val)
+        results.getFromServer(qstring.join("^").toUpperCase(),0,50)
     }
     curEx = 0 
     $scope.examples = function() {
