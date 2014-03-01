@@ -222,7 +222,6 @@ app.controller('GridCtrl', function($scope, $http, results) {
             {name: "Enos", age: 30}];
         console.log($scope.myData[0])
         $scope.totalServerItems = 5;
-        $scope.$apply();
 
         console.log("set page data")
     };
