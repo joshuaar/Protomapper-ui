@@ -211,6 +211,7 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
          $scope.tableParams.total(largeLoad["num"])
          $scope.tableParams.reload()
          $scope.query = nextQuery
+         console.log("Got server results")
     });
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
