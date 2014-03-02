@@ -131,7 +131,7 @@ app.controller('ChartCtrl', function($scope,$http,results) {
         //console.log(out)
         return out
     }
-}
+})
 
 //Grid with pagination for results
 app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="Protomapper-ui.iws" />
@@ -59,7 +58,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="50" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.32960895">
+            <state line="133" column="2" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.18994413">
               <folding />
             </state>
           </provider>
@@ -418,7 +417,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="50" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.32960895">
+        <state line="133" column="2" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.18994413">
           <folding />
         </state>
       </provider>
