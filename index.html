@@ -63,7 +63,7 @@
         </div>
 
         <!--Result grid controller-->
-        <div ng-controller="GridCtrl">
+        <div ng-controller="GridCtrl" ng-cloak ng-show="query">
             <p><strong>Page:</strong> {{tableParams.page()}}</p>
             <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
             <!--// Typical result from server-->

@@ -34,7 +34,6 @@ app.service('results', function($rootScope, $http) {
 //    "db":"custom" }]
 //}
 
-
 var promptCtrl = function($scope,results) {
     $scope.patt = [{"val":""}];
     $scope.addPatt = function() {
