@@ -16,7 +16,7 @@ app.service('results', function($rootScope, $http) {
                 $http.get("/query?"+"q="+queryJSON+"&r="+frm+"%%"+to).success(callback);
             }
             var summaryClosure = function(callback){
-                $http.get("/summary?"+"q="+queryJSON+"&r="+frm+"%%"+to).success(callback);
+                $http.get("/summary?"+"q="+queryJSON+"&r="+0+"%%"+1).success(callback);
             }
             queryClosures = {"query": queryClosure, "summary": summaryClosure}
             console.log("Packaged Query as closure for pagination")
