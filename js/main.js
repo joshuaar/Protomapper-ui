@@ -217,7 +217,7 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
         count: 10           // count per page
     }, {
         total: function () { return data.length; }, // length of data
-        getData: function($scope,$defer, params) {
+        getData: function($defer, params) {
             $http.get($scope.query(params.page() - 1 * params.count(), params.page() * params.count())).success(
                 function(result) {
                     $defer.resolve(result["res"])
