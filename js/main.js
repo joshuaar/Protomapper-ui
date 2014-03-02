@@ -207,7 +207,7 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
         {name: "Tiancum", age: 43}];
     $http.get('/query?q=AVHAD&r=0%%500').success(function (largeLoad) {
          data = largeLoad["res"]
-         var nextQuery = "/query?"+"q="+largeLoad["query"]+"r="
+         var nextQuery = function(frm,to){return "/query?"+"q="+largeLoad["query"]+"r="+frm+"%%"+to}
          $scope.tableParams.total(largeLoad["num"])
          $scope.tableParams.reload()
          $scope.tableParams.query = nextQuery
@@ -219,7 +219,12 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
     }, {
         total: function () { return data.length; }, // length of data
         getData: function($defer, params) {
-            $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            $http.get(params.query(params.page() - 1 * params.count(), params.page() * params.count())).success(
+                function(result) {
+                    $defer.resolve(result["res"])
+                }
+            );
+            //$defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
         }
     });
 });
