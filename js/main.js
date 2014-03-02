@@ -1,22 +1,26 @@
 var app = angular.module('app', ['ui.bootstrap','ngTable'])
 var webroot = ""
-app.service('results', function($rootScope) {
+app.service('results', function($rootScope, $http) {
     var results = {};
     return {
         set : function(newRes){
             results = newRes
-            $rootScope.$broadcast("resultsChanged",results)
+            $rootScope.$broadcast("querySubmitted",results)
             console.log(results.num)
         },
         get : function(){
             return results
         },
-        getFromServer: function(queryJSON,frm,to){
-            $.getJSON(webroot+"/query?q="+queryJSON+"&r="+frm+"%%"+to,function(data){
-                console.log("Got results from server")
-                results = data
-                $rootScope.$broadcast("resultsChanged",data)
-            })
+        getFromServer: function(queryJSON){
+            var queryClosure = function(frm,to,callback){
+                $http.get("/query?"+"q="+queryJSON["query"]+"&r="+frm+"%%"+to).success(callback);                
+            }
+            var summaryClosure = function(callback){
+                $http.get("/summary?"+"q="+queryJSON["query"]+"&r="+frm+"%%"+to).success(callback);
+            }
+            queryClosures = {"query": nextQuery, "summary": nextSummary}
+            console.log("Packaged Query as closure for pagination")
+            $rootScope.$broadcast("querySubmitted",queryClosures)
         }
     }
 })
@@ -44,7 +48,7 @@ var promptCtrl = function($scope,results) {
 	qstring = []
         for(i in $scope.patt)
             qstring=qstring.concat($scope.patt[i].val)
-        results.getFromServer(qstring.join("^").toUpperCase(),0,50)
+        results.getFromServer(qstring.join("^").toUpperCase())
     }
     curEx = 0 
     $scope.examples = function() {
@@ -107,7 +111,7 @@ var resCtrl = function($scope,results) {
     putChart([])
     $scope.results = { "num":0,"rng":[1,5],"query":"NONE","res":[] } ;
     $scope.showRes = false;
-    $scope.$on('resultsChanged',function(event,res){
+    $scope.$on('querySubmitted',function(event,res){
         $scope.results = res
 	$scope.showRes = true;
 	//console.log(res.num+" NUM")
@@ -173,7 +177,7 @@ var paginationCtrl = function ($scope, results) {
     $scope.currentPage = 0;
     $scope.maxSize = 5;
 
-    $scope.$on('resultsChanged', function(event,res){
+    $scope.$on('querySubmitted', function(event,res){
         $scope.results = res
         $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
         $scope.totalItems = $scope.results.num;
@@ -198,35 +202,33 @@ var paginationCtrl = function ($scope, results) {
 
 //Grid with pagination for results
 app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
+   
+    $scope.$on('querySubmitted', function(event,queryFuncs){
+        $scope.query = queryFuncs.query
+        $scope.summary = queryFuncs.summary
+        var getNResultsCallback = function(result){
+            $scope.tableParams.total(result["num"])
+            $scope.tableParams.reload()
+            console.log("Got number of results from server")
+        }
+        $scope.query(0,1,getNResultsCallback)
+        
+    })
 
-    var data = [{name: "Moroni", age: 50},
-        {name: "Tiancum", age: 43},
-        {name: "Jacob", age: 27},
-        {name: "Nephi", age: 29},
-        {name: "Enos", age: 34},
-        {name: "Tiancum", age: 43}];
-    $http.get('/query?q=AVHAD&r=0%%500').success(function (largeLoad) {
-         data = largeLoad["res"]
-         var nextQuery = function(frm,to){return "/query?"+"q="+largeLoad["query"]+"&r="+frm+"%%"+to}
-         $scope.query = nextQuery
-         $scope.tableParams.total(largeLoad["num"])
-         $scope.tableParams.reload()
-         console.log("Got server results")
-    });
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
         count: 10           // count per page
     }, {
+        
         total: function () { return data.length; }, // length of data
+        
         getData: function($defer, params) {
+            //If query hook has been set, go ahead and use it
             if($scope.query)
-            $http.get($scope.query((params.page()-1) * params.count(), params.page() * params.count())).success(
-                function(result) {
-                    params.total(result["num"])
-                    $defer.resolve(result["res"])
-                }
-            );
-            //$defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            $scope.query((params.page()-1) * params.count(), params.page() * params.count(), function(result) {
+                params.total(result["num"])
+                $defer.resolve(result["res"])
+            });
         }
     });
 });
