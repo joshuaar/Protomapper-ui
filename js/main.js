@@ -106,8 +106,7 @@ var putChart = function(data){
 
 var realsummary = {"Beutenbergia":1,"Jannaschia":1,"Rhodobacter":3,"Methanobrevibacter":1,"Acidovorax":2,"Nocardia":1,"Aeromonas":2,"Jonesia":1,"Sorangium":1,"Streptomyces":5,"Corallococcus":1,"Geobacter":2,"Haliscomenobacter":1,"Leptothrix":1,"Mycobacterium":1,"Pseudomonas":4}
 
-var resCtrl = function($scope,results) {
-
+app.controller('ChartCtrl', function($scope,$http,results) {
     putChart([])
     $scope.results = { "num":0,"rng":[1,5],"query":"NONE","res":[] } ;
     $scope.showRes = false;
@@ -133,72 +132,6 @@ var resCtrl = function($scope,results) {
         return out
     }
 }
-
-app.directive('p2pagination', function() {
-    return {
-        restrict: "AE",
-        template: ['<div class="pagination">',
-            '<a href="#{{page}}" ng-click="fst()"><-- </a>',
-            '<a href="#{{page}}" ng-click="prev()"> <- </a> | ',
-            '<a href="#{{page}}" ng-repeat="page in pages" ng-click="goto(page)"> {{page}} </a> |',
-            '<a href="#{{page}}" ng-click="next()"> -> </a>',
-            '<a href="#{{page}}" ng-click="last()"> --> </a>',
-            ' Page: {{page}} ',
-            '</div>'
-        ].join("\n")
-
-    }
-});
-
-//Pagination needs the scope and the results variable
-
-
-var getPageVector = function(nPages,curpage,maxDisplay) {
-    out = []
-    if(curpage <= maxDisplay){//if the current page is in the first n pages
-        for(var i=1;i<=maxDisplay;i++)out.push(i)
-    } else if(curpage > nPages - maxDisplay){//if the current page is in the last n pages
-        for(var i=nPages;i>(nPages-maxDisplay);i--)out.push(i)
-    } else {//if the current page is in the middle somewhere
-        var eachSide = Math.floor(maxDisplay/2)
-        for(var i=curpage-1;i>=curpage-eachSide;i--){out.push(i)}
-        for(var i = curpage+1;i<=curpage+eachSide;i++)out.push(i)
-        out.push(curpage)
-    }
-    return out.sort(function(a,b){return a-b}).slice(0,Math.min(maxDisplay,nPages))
-}
-
-
-var paginationCtrl = function ($scope, results) {
-    $scope.results = results.get()
-
-    $scope.totalItems = $scope.results.num;
-    $scope.itemsPerPage = 50;
-    $scope.currentPage = 0;
-    $scope.maxSize = 5;
-
-    $scope.$on('querySubmitted', function(event,res){
-        $scope.results = res
-        $scope.nPages = Math.ceil($scope.results.num / $scope.resPerPage)
-        $scope.totalItems = $scope.results.num;
-        $scope.currentPage = Math.floor($scope.results.rng[0]/$scope.itemsPerPage)+1
-	$scope.$apply()
-    })
-
-    $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
-        results.getFromServer($scope.results.query,(pageNo-1)*$scope.itemsPerPage,pageNo*$scope.itemsPerPage)
-
-    };
-    $scope.$watch("currentPage", function(){
-	if(!$scope.currentPage == 0)
-            $scope.setPage($scope.currentPage)
-    })
-
-
-
-
-};
 
 //Grid with pagination for results
 app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {

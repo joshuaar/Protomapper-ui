@@ -62,57 +62,6 @@
             <svg></svg>
         </div>
 
-        <div class="resultcontainer" ng-controller="resCtrl" ng-cloak ng-show="showRes">
-
-                <span class="promptext">Search Returned {{results.num}} Results:</span>
-            <div class="resultheader">
-                <br>
-
-                <!--PUT DOWNLOAD HERE-->
-                <!--<img src="img/excel.gif" class="exceldl">-->
-                <!--<a href="#">Download CSV</a>-->
-            </div>
-            <div class="results">
-                <table>
-                    <tr>
-                        <td class="tablecol">
-                            Organism
-                        </td>
-                        <td class="tablecol">
-                            Description
-                        </td>
-                        <td class="tablecol">
-                            Match
-                        </td>
-                        <td class="tablecol">
-                            Length
-                        </td>
-                        <td class="tablecol">
-                            Database
-                        </td>
-                    </tr>
-                    <tr ng-repeat="result in results.res">
-                        <td class="tablecol">
-                            {{result.org}}
-                        </td>
-                        <td class="tablecol">
-                            {{result.desc}}
-                        </td>
-                        <td class="tablecol">
-                            {{matchRng(result.seq,results.query)}}
-                        </td>
-                        <td class="tablecol">
-                            {{result.seq.length}}
-                        </td>
-                        <td class="tablecol">
-                            {{result.db}}
-                        </td>
-                    </tr>
-                </table>
-                <pagination ng-controller="paginationCtrl" boundary-links="true" max-size="maxSize" total-items="totalItems" page="currentPage" class="pagination-small" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
-            </div>
-        </div>
-
         <!--Result grid controller-->
         <div ng-controller="GridCtrl">
             <p><strong>Page:</strong> {{tableParams.page()}}</p>
