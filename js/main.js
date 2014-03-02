@@ -106,6 +106,7 @@ var putChart = function(data){
 
 var realsummary = {"Beutenbergia":1,"Jannaschia":1,"Rhodobacter":3,"Methanobrevibacter":1,"Acidovorax":2,"Nocardia":1,"Aeromonas":2,"Jonesia":1,"Sorangium":1,"Streptomyces":5,"Corallococcus":1,"Geobacter":2,"Haliscomenobacter":1,"Leptothrix":1,"Mycobacterium":1,"Pseudomonas":4}
 
+//Controls the chart
 app.controller('ChartCtrl', function($scope,$http,results) {
     putChart([])
     $scope.results = { "num":0,"rng":[1,5],"query":"NONE","res":[] } ;

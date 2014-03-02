@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393705851147" ignored="false" />
-    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393718137381" ignored="false" />
+    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393736425132" ignored="false" />
     <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393736261377" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300482941" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300772921" ignored="false" />
@@ -38,9 +40,9 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="2845" selection-end="2845" vertical-scroll-proportion="-5.2040815">
+            <state line="60" column="48" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-5.2040815">
               <folding>
-                <marker date="1393736309636" expanded="true" signature="4354:4369" placeholder="&lt;xml/&gt;" />
+                <marker date="1393736446974" expanded="true" signature="4380:4395" placeholder="&lt;xml/&gt;" />
               </folding>
             </state>
           </provider>
@@ -58,7 +60,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="2" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.18994413">
+            <state line="108" column="20" selection-start="3649" selection-end="3649" vertical-scroll-proportion="0.3575419">
               <folding />
             </state>
           </provider>
@@ -234,7 +236,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="742" extended-state="0" />
+    <frame x="-1" y="0" width="1368" height="742" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -320,7 +322,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="69" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393736309636" expanded="true" signature="4354:4369" placeholder="&lt;xml/&gt;" />
+            <marker date="1393736446974" expanded="true" signature="4380:4395" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -343,7 +345,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393736309636" expanded="true" signature="4354:4369" placeholder="&lt;xml/&gt;" />
+            <marker date="1393736446974" expanded="true" signature="4380:4395" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -366,7 +368,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="74" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1393736309636" expanded="true" signature="4354:4369" placeholder="&lt;xml/&gt;" />
+            <marker date="1393736446974" expanded="true" signature="4380:4395" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -408,16 +410,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="2845" selection-end="2845" vertical-scroll-proportion="-5.2040815">
+        <state line="60" column="48" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-5.2040815">
           <folding>
-            <marker date="1393736309636" expanded="true" signature="4354:4369" placeholder="&lt;xml/&gt;" />
+            <marker date="1393736446974" expanded="true" signature="4380:4395" placeholder="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="2" selection-start="4462" selection-end="4462" vertical-scroll-proportion="0.18994413">
+        <state line="108" column="20" selection-start="3649" selection-end="3649" vertical-scroll-proportion="0.3575419">
           <folding />
         </state>
       </provider>
