@@ -27,8 +27,10 @@
 
     <table ng-table="tableParams" class="table">
         <tr ng-repeat="prot in $data">
-            <td data-title="'org'">{{prot.org}}</td>
-            <td data-title="'acc'">{{prot.acc}}</td>
+            <td data-title="'organism'">{{prot.org}}</td>
+            <td data-title="'accession'">{{prot.acc}}</td>
+            <td data-title="'match'">{{prot.seq}}</td>
+            <td data-title="'db'">{{prot.db}}</td>
         </tr>
     </table>
 </div>
