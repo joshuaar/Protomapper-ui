@@ -109,29 +109,12 @@ var realsummary = {"Beutenbergia":1,"Jannaschia":1,"Rhodobacter":3,"Methanobrevi
 //Controls the chart
 app.controller('ChartCtrl', function($scope,$http,results) {
     putChart([])
-    $scope.results = { "num":0,"rng":[1,5],"query":"NONE","res":[] } ;
-    $scope.showRes = false;
-    $scope.$on('querySubmitted',function(event,res){
-        $scope.results = res
-	$scope.showRes = true;
-	//console.log(res.num+" NUM")
-	$scope.$apply()
-	$.getJSON(webroot+"/summary?q="+res.query,function(data){
-	    putChart(data)
-            console.log("got summary from server")
+    $scope.$on('querySubmitted',function(event,closures){
+        closures.summary(
+            function(result){
+            putChart(result)
         })
     })
-    $scope.matchRng = function(seq,regex) {
-        var patt = new RegExp(regex,"i");
-        var match = patt.exec(seq);
-        //console.log(match)
-        var start = match.index
-        var text=match[0];
-        var end = start+text.length;
-        var out = start + " - " + text + " - " + end
-        //console.log(out)
-        return out
-    }
 })
 
 //Grid with pagination for results
