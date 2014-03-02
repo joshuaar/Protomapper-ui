@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-    </list>
+    <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="" />
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393705851147" ignored="false" />
@@ -38,7 +36,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="31" selection-start="6109" selection-end="6109" vertical-scroll-proportion="-5.571429">
+            <state line="134" column="20" selection-start="6109" selection-end="6109" vertical-scroll-proportion="-5.571429">
               <folding>
                 <marker date="1393718141128" expanded="true" signature="6483:6498" placeholder="&lt;xml/&gt;" />
               </folding>
@@ -49,7 +47,7 @@
       <file leaf-file-name="grid.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="59" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-20.0">
+            <state line="32" column="50" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-20.0">
               <folding />
             </state>
           </provider>
@@ -182,9 +180,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AngularStuff" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -397,7 +399,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="31" selection-start="6109" selection-end="6109" vertical-scroll-proportion="-5.571429">
+        <state line="134" column="20" selection-start="6109" selection-end="6109" vertical-scroll-proportion="-5.571429">
           <folding>
             <marker date="1393718141128" expanded="true" signature="6483:6498" placeholder="&lt;xml/&gt;" />
           </folding>
@@ -406,7 +408,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="59" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-20.0">
+        <state line="32" column="50" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-20.0">
           <folding />
         </state>
       </provider>
