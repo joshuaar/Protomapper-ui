@@ -210,16 +210,15 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
          var nextQuery = function(frm,to){return "/query?"+"q="+largeLoad["query"]+"r="+frm+"%%"+to}
          $scope.tableParams.total(largeLoad["num"])
          $scope.tableParams.reload()
-         $scope.tableParams.query = nextQuery
+         $scope.query = nextQuery
     });
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
-        count: 10,           // count per page
-        query: function(frm,to){return ""}
+        count: 10           // count per page
     }, {
         total: function () { return data.length; }, // length of data
-        getData: function($defer, params) {
-            $http.get(params.query(params.page() - 1 * params.count(), params.page() * params.count())).success(
+        getData: function($scope,$defer, params) {
+            $http.get($scope.query(params.page() - 1 * params.count(), params.page() * params.count())).success(
                 function(result) {
                     $defer.resolve(result["res"])
                 }
