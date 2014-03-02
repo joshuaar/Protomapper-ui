@@ -208,9 +208,9 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
     $http.get('/query?q=AVHAD&r=0%%500').success(function (largeLoad) {
          data = largeLoad["res"]
          var nextQuery = function(frm,to){return "/query?"+"q="+largeLoad["query"]+"r="+frm+"%%"+to}
+         $scope.query = nextQuery
          $scope.tableParams.total(largeLoad["num"])
          $scope.tableParams.reload()
-         $scope.query = nextQuery
          console.log("Got server results")
     });
     $scope.tableParams = new ngTableParams({
