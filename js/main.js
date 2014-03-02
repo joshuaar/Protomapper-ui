@@ -18,7 +18,7 @@ app.service('results', function($rootScope, $http) {
             var summaryClosure = function(callback){
                 $http.get("/summary?"+"q="+queryJSON+"&r="+0+"%%"+1).success(callback);
             }
-            queryClosures = {"query": queryClosure, "summary": summaryClosure}
+            queryClosures = {"query": queryClosure, "summary": summaryClosure, "queryString":queryJSON}
             console.log("Packaged Query as closure for pagination")
             $rootScope.$broadcast("querySubmitted",queryClosures)
         }
@@ -122,10 +122,12 @@ app.controller('GridCtrl', function($scope,$http,ngTableParams,results) {
     $scope.$on('querySubmitted', function(event,queryFuncs){
         $scope.query = queryFuncs.query
         $scope.summary = queryFuncs.summary
+        $scope.queryString = queryFuncs.queryString
         var getNResultsCallback = function(result){
             $scope.tableParams.total(result["num"])
             $scope.tableParams.reload()
             console.log("Got number of results from server")
+            $scope.nResults = result["num"]
         }
         $scope.query(0,1,getNResultsCallback)
         

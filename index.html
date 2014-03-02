@@ -64,8 +64,8 @@
 
         <!--Result grid controller-->
         <div ng-controller="GridCtrl" ng-cloak ng-show="query">
-            <p><strong>Page:</strong> {{tableParams.page()}}</p>
-            <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+            <p><strong>Query:</strong> {{queryString}}</p>
+            <p><strong>Num Results:</strong> {{nResults}}</p>
             <a download="content.txt" ng-href="{{ url }}">download</a>
             <!--// Typical result from server-->
             <!--//{ "num":515,"rng":[1,2],"query":"AVNFK",-->
