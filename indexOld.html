@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/nv.d3.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- D3 and NV for pie graph -->
+        <script src="js/d3.v2.js"></script>
+        <script src="js/nv.d3.js"></script>
+        <link rel="stylesheet" href="css/nv.d3.min.css">
+        <link rel="stylesheet" href="css/ng-table.min.css">
+        <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+
+    </head>
+    <body ng-app="app">
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="banner">
+            <img src="img/pm.gif">
+            <img class="imgright" src="img/bd.gif">
+        </div>
+        <br>
+        DEVELOPMENT VERSION
+        <div class="inputbox" ng-controller="promptCtrl">
+            <p class="promptext">Enter a pattern:</p>
+            <span ng-repeat="i in patt">
+                <input type="text" class="patterninput" ng-model="i.val" placeholder="[EN]TE[R].A.[PA]TTE[RN]{2,4}">
+
+            <a href="#" class="promptext" ng-click="examples()">Examples</a>
+            </span>
+
+            <button type="button" ng-click="addPatt()">add another</button>
+            <button type="button" ng-click="clear()">clear</button>
+
+
+            <p class="promptext2">Select database:</p>
+            <!--Replace with something dynamic!-->
+            <input type="radio" name="group2" value="uniprot" disabled> UniprotKB (coming soon)
+            <br>
+            <input type="radio" name="group2" value="ncbibact" checked="checked"> NCBI Bacteria and Virus
+            <br>
+            <button type="button" ng-click="search()">search</button>
+        </div>
+
+        <div id="chart" ng-controller="ChartCtrl">
+            <svg></svg>
+        </div>
+
+        <!--Result grid controller-->
+        <div ng-controller="GridCtrl" ng-cloak ng-show="query">
+            <p><strong>Query:</strong> {{queryString}}</p>
+            <p><strong>Num Results:</strong> {{nResults}}</p>
+            <a download="content.txt" ng-href="{{ url }}">download</a>
+            <!--// Typical result from server-->
+            <!--//{ "num":515,"rng":[1,2],"query":"AVNFK",-->
+            <!--//    "res":[{-->
+            <!--//    "seq":"MAQAMQMTNVALPTSMDKKTYAVNFKGLIAHLLDILFVDNSAPRSYYAEDLSAHIQKDIGMYR" ,-->
+            <!--//    "acc":"YP_008269995.1" ,-->
+            <!--//    "desc":"gi|525853438|ref|YP_008269995.1| hypothetical protein M636_03730 [Vibrio parahaemolyticus O1:K33 str. CDC_K4557]" ,-->
+            <!--//    "org":"Vibrio parahaemolyticus O1:K33 str. CDC_K4557" ,-->
+            <!--//    "db":"custom" }]-->
+            <!--//}-->
+            <table ng-table="tableParams" class="table">
+                <tr ng-repeat="prot in $data">
+                    <td data-title="'db'">{{prot.db}}</td>
+                    <td data-title="'acc'">{{prot.acc}}</td>
+                    <td data-title="'org'">{{prot.org}}</td>
+                </tr>
+            </table>
+        </div>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/ng-table.min.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
+
+    </body>
+</html>
