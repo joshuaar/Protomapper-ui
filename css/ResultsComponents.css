@@ -1,0 +1,32 @@
+.resultBox {
+    word-wrap:break-word;
+    vertical-align: top;
+}
+
+.resultBox:hover {
+    background: #CCFFCC;
+
+
+}
+
+.resultRow {
+    background: #f9f9f9;
+
+}
+
+.resultRow:hover {
+    outline: thin solid black;
+}
+
+.resultTable {
+
+}
+
+.tableHeader {
+    background: #e4e4e4;
+    color: #741626;
+    font-weight:bold;
+    margin-bottom: 0.1em;
+    margin-top: .5em;
+    font-size: .7em;
+}

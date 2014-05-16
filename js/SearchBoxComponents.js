@@ -2,6 +2,126 @@
  * @jsx React.DOM
  */
 
+
+
+/**
+ * Props:
+ *  orgData: List of objects   {displayName:"",id:""}
+ *  dbData: List  [""]
+ *  handleUserInput(queryCmds)  queryCmds = {"queryCmds":{"patterns":["ASD"],"organisms":["porg2"]},"dbs":{"1":false,"2":false}}
+ */
+var searchDialog = React.createClass({
+
+    getInitialState: function() {
+        var dbToggle = {}
+        for(i in this.props.dbData) {
+            dbToggle[this.props.dbData[i].id] = false
+        }
+        return {
+            queryCmds: {},
+            dbs: dbToggle
+        }
+    },
+
+
+    clearQuery: function() {
+        this.setState( this.getInitialState() )
+    },
+
+    /**
+     *
+     * @param key: the query factor
+     * @param txt: the content of the query factor
+     * @param index: the index of the query factor for deleting
+     */
+    rmFromQuery: function(key, txt, index){
+        var queryBuilder = JSON.parse(JSON.stringify(this.state.queryCmds));
+        console.log(key)
+        queryBuilder[key].splice(index,1)
+        this.setState({queryCmds: queryBuilder} )
+
+    },
+
+    /**
+     *
+     * @param key: type of query (query factor)
+     * @param value: content of query
+     * @returns {boolean}
+     */
+    addToQuery: function(key, value) {
+        console.log("Adding "+value+" to "+" "+key)
+        if(value.length == 0)
+            return false
+        var queryBuilder = JSON.parse(JSON.stringify(this.state.queryCmds));
+        var wasAlreadyIn = $.inArray(value,queryBuilder[key]) >= 0
+        if(queryBuilder.hasOwnProperty(key)){
+            queryBuilder[key].push(value)
+        } else {
+            queryBuilder[key] = [value]
+        }
+        if(!wasAlreadyIn)
+            this.setState({queryCmds: queryBuilder} )
+    },
+
+    /**
+     * Props:
+     *
+     * @param dbID: ID of database as given by the API
+     * @param dbState: the toggle state of the db
+     */
+    toggleDB: function(dbID, dbState) {
+        var dbs = this.state.dbs
+        dbs[dbID] = dbState
+        this.setState({
+            queryCmds: this.state.queryCmds,
+            dbs: dbs
+        })
+    },
+
+    submitSearch: function() {
+        this.props.handleUserInput(this.state)
+    }
+    ,
+    render: function() {
+        var queryItems = {}
+        console.log(JSON.stringify(this.state))
+        comp = this
+        var queryRender = Object.keys(this.state.queryCmds).map( function(i,ind) {
+            var handler = function(index, value) {
+
+            }
+            return (
+                <div>
+                    <queryTagDisplay tag={ i } values={comp.state.queryCmds[i]} handleUserInput={comp.rmFromQuery} />
+                </div>
+                )
+        } )
+
+        var addToQueryUpper = function(key,value) {
+            comp.addToQuery(key,value.toUpperCase())
+        }
+
+        return (
+            <div className="inputbox" >
+                <h3 className="promptext">Query pattern</h3>
+                <div className="patternbox">
+                    <dropdownSelection formname="patterns" handleUserInput = {addToQueryUpper} />
+                </div>
+                <h3 className="promptext">Organism mask</h3>
+                <dropdownSelection formname="organisms" data={this.props.orgData} handleUserInput={this.addToQuery} />
+                <h3>Database selection</h3>
+                <checkboxSelection data={this.props.dbData} handleUserInput={this.toggleDB} />
+                {queryRender}
+                <hr />
+                <button type="button" onClick={this.submitSearch}><h3>Search</h3></button>
+            </div>
+
+
+            )
+    }
+})
+
+
 /**
  * Dropdown selector with autocomplete
  * Props:
@@ -169,98 +289,6 @@ var queryTagDisplay = React.createClass({
             )
     }
 })
-
-/**
- * Props:
- *
- */
-var searchDialog = React.createClass({
-
-    getInitialState: function() {
-      var dbToggle = {}
-      for(i in this.props.dbData) {
-          dbToggle[this.props.dbData[i].id] = false
-      }
-      return {
-          queryCmds: {},
-          dbs: dbToggle
-      }
-    },
-
-
-    clearQuery: function() {
-        this.setState( this.getInitialState() )
-    },
-
-    rmFromQuery: function(key, index){
-        var queryBuilder = JSON.parse(JSON.stringify(this.state.queryCmds));
-        console.log(key)
-        queryBuilder[key].splice(index,1)
-        this.setState({queryCmds: queryBuilder} )
-
-    },
-
-    addToQuery: function(key, value) {
-        console.log("Adding "+value+" to "+" "+key)
-        if(value.length == 0)
-          return false
-        var queryBuilder = JSON.parse(JSON.stringify(this.state.queryCmds));
-        var wasAlreadyIn = $.inArray(value,queryBuilder[key]) >= 0
-        if(queryBuilder.hasOwnProperty(key)){
-            queryBuilder[key].push(value)
-        } else {
-            queryBuilder[key] = [value]
-        }
-        if(!wasAlreadyIn)
-            this.setState({queryCmds: queryBuilder} )
-    },
-
-    toggleDB: function(dbID, dbState) {
-        var dbs = this.state.dbs
-        dbs[dbID] = dbState
-        this.setState({
-            queryCmds: this.state.queryCmds,
-            dbs: dbs
-        })
-    },
-
-    render: function() {
-        var queryItems = {}
-        console.log(JSON.stringify(this.state))
-        comp = this
-        var queryRender = Object.keys(this.state.queryCmds).map( function(i,ind) {
-            var handler = function(index, value) {
-
-            }
-            return (
-                <div>
-                    <queryTagDisplay tag={ i } values={comp.state.queryCmds[i]} handleUserInput={comp.rmFromQuery} />
-                </div>
-                )
-        } )
-
-        var addToQueryUpper = function(key,value) {
-            comp.addToQuery(key,value.toUpperCase())
-        }
-
-        return (
-            <div className="inputbox" >
-                <h3 className="promptext">Query pattern</h3>
-                <div className="patternbox">
-                    <dropdownSelection formname="patterns" handleUserInput = {addToQueryUpper} />
-                </div>
-                <h3 className="promptext">Organism mask</h3>
-                <dropdownSelection formname="organisms" data={this.props.orgData} handleUserInput={this.addToQuery} />
-                <h3>Database selection</h3>
-                <checkboxSelection data={this.props.dbData} handleUserInput={this.toggleDB} />
-                {queryRender}
-            </div>
-
-
-            )
-    }
-})
-
 
 var testComponents = function(){
     var dropdownTest = ["org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3","org1","porg2","zorg3"]
