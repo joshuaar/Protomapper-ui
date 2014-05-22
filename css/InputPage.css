@@ -11,6 +11,15 @@
     padding-right: 1em;
 }
 
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;
+    color: #FFFF00;
+    height: 1px;
+}
+
 .imgright {
     margin-left: 2.5em;
 }
@@ -26,12 +35,16 @@
 .InputContainer {
     width: 420px;
     margin-left: auto ;
-    margin-top: 3em;
+    margin-top: 1em;
     margin-bottom: auto;
     margin-right: auto;
 }
 
 .footerText {
     font-size: .8em;
-    float:right
+    text-align: center;
+}
+
+.OuterContainer {
+    max-width: 700px;
 }

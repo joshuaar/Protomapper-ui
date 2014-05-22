@@ -154,7 +154,7 @@ var searchDialog = React.createClass({
                 <div className="patternbox">
                     <dropdownSelection formname="patterns" handleUserInput = {addToQueryUpper} />
                 </div>
-                <h3 className="promptext">Organism mask</h3>
+                <h3 className="promptext">Organism mask (optional)</h3>
                 <dropdownSelection key="1" formname="organisms" data={this.props.orgData} handleUserInput={this.addToQuery} />
                 <h3>Database selection</h3>
                 <checkboxSelection data={this.props.dbData} handleUserInput={this.toggleDB} />

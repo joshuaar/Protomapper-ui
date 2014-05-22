@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/InputPage.css" afterPath="$PROJECT_DIR$/css/InputPage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/SearchBoxComponents.css" afterPath="$PROJECT_DIR$/css/SearchBoxComponents.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/SearchBoxComponents.js" afterPath="$PROJECT_DIR$/js/SearchBoxComponents.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Protomapper-ui.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400698872926" ignored="false" />
-    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400736956852" ignored="false" />
+    <file path="/Dummy.txt" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400741713338" ignored="false" />
+    <file path="/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400746741430" ignored="false" />
     <file path="/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1393737278583" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/index.html" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300482941" ignored="false" />
     <file path="$PROJECT_DIR$/../D3/piechart/js/main.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1387300772921" ignored="false" />
@@ -30,7 +29,7 @@
     <file path="/GraphComponents.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400700682505" ignored="false" />
     <file path="/ResultsPage.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400701056556" ignored="false" />
     <file path="/InputPage.js" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400713151714" ignored="false" />
-    <file path="/InputPage.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400737040707" ignored="false" />
+    <file path="/InputPage.css" changelist="b3f56ace-11fe-4b54-83ff-6a48ec4bed49" time="1400746495820" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="20" selection-start="2045" selection-end="2045" vertical-scroll-proportion="0.6660482">
+            <state line="28" column="95" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.08163265">
               <folding />
             </state>
           </provider>
@@ -71,10 +70,10 @@
       <file leaf-file-name="SearchBoxComponents.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/SearchBoxComponents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="20" selection-start="5055" selection-end="5055" vertical-scroll-proportion="-1.2">
+            <state line="159" column="23" selection-start="4899" selection-end="4899" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1400736840911" expanded="true" signature="7094:7105" placeholder="..." />
+                <marker date="1400737461207" expanded="false" signature="7105:7116" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -92,7 +91,7 @@
       <file leaf-file-name="SearchBoxComponents.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/SearchBoxComponents.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="102" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+            <state line="28" column="80" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +100,7 @@
       <file leaf-file-name="indexOld.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/indexOld.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1713" selection-end="1843" vertical-scroll-proportion="-10.0">
+            <state line="34" column="0" selection-start="1713" selection-end="1843" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,7 +109,7 @@
       <file leaf-file-name="InputPage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/InputPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="100" selection-start="1348" selection-end="1348" vertical-scroll-proportion="-23.32">
+            <state line="64" column="16" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -119,7 +118,7 @@
       <file leaf-file-name="InputPage.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/InputPage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="15" selection-start="470" selection-end="475" vertical-scroll-proportion="0.0">
+            <state line="7" column="21" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,9 +127,8 @@
       <file leaf-file-name="ResultsComponents.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ResultsComponents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="21" selection-start="1340" selection-end="1340" vertical-scroll-proportion="54.0">
+            <state line="63" column="21" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <marker date="1400709431943" expanded="true" signature="2038:2047" placeholder="..." />
               </folding>
             </state>
@@ -141,9 +139,7 @@
         <entry file="file://$PROJECT_DIR$/js/GraphComponents.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="88" column="32" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,8 +174,8 @@
         <option value="$PROJECT_DIR$/js/GraphComponents.js" />
         <option value="$PROJECT_DIR$/js/InputPage.js" />
         <option value="$PROJECT_DIR$/js/ResultsComponents.js" />
-        <option value="$PROJECT_DIR$/js/SearchBoxComponents.js" />
         <option value="$PROJECT_DIR$/css/SearchBoxComponents.css" />
+        <option value="$PROJECT_DIR$/js/SearchBoxComponents.js" />
         <option value="$PROJECT_DIR$/css/InputPage.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
@@ -288,8 +284,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -352,7 +348,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25271317" sideWeight="0.6704" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12325581" sideWeight="0.6704" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -430,16 +426,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ResultsComponents.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="9" selection-start="548" selection-end="548" vertical-scroll-proportion="-9.875">
-          <folding />
-        </state>
+        <state line="16" column="9" selection-start="548" selection-end="548" vertical-scroll-proportion="-9.875" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="38" selection-start="2273" selection-end="2273" vertical-scroll-proportion="-10.2">
-          <folding />
-        </state>
+        <state line="64" column="38" selection-start="2273" selection-end="2273" vertical-scroll-proportion="-10.2" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/ResultsComponents.css">
@@ -458,24 +450,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GraphComponent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="2" selection-start="627" selection-end="627" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
+        <state line="19" column="2" selection-start="627" selection-end="627" vertical-scroll-proportion="-11.875" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/largeLoad.json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/GraphComponents.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="32" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -488,16 +474,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/indexOld.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1713" selection-end="1843" vertical-scroll-proportion="-10.0">
+        <state line="34" column="0" selection-start="1713" selection-end="1843" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ResultsComponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="21" selection-start="1340" selection-end="1340" vertical-scroll-proportion="54.0">
+        <state line="63" column="21" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <marker date="1400709431943" expanded="true" signature="2038:2047" placeholder="..." />
           </folding>
         </state>
@@ -512,38 +497,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/SearchBoxComponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="20" selection-start="5055" selection-end="5055" vertical-scroll-proportion="-1.2">
+        <state line="159" column="23" selection-start="4899" selection-end="4899" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1400736840911" expanded="true" signature="7094:7105" placeholder="..." />
+            <marker date="1400737461207" expanded="false" signature="7105:7116" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/SearchBoxComponents.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="102" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+        <state line="28" column="80" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/InputPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="100" selection-start="1348" selection-end="1348" vertical-scroll-proportion="-23.32">
+        <state line="64" column="16" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/InputPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="15" selection-start="470" selection-end="475" vertical-scroll-proportion="0.0">
+        <state line="7" column="21" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="20" selection-start="2045" selection-end="2045" vertical-scroll-proportion="0.6660482">
+        <state line="28" column="95" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.08163265">
           <folding />
         </state>
       </provider>
