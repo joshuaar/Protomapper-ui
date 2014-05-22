@@ -124,12 +124,22 @@ var searchDialog = React.createClass({
         var queryItems = {}
         comp = this
         var queryRender = Object.keys(this.state.queryCmds).map( function(i,ind) {
-            var handler = function(index, value) {
+            var labelStyle = "label-default"
+            switch(ind % 5) {
+                case 0: labelStyle = "label-success"
+                    break
+                case 1: labelStyle = "label-info"
+                    break;
+                case 2: labelStyle = "label-warning"
+                    break;
+                case 3: labelStyle = "label-danger"
+                    break;
+                case 4: labelStyle = "label-primary"
 
             }
             return (
                 <div>
-                    <queryTagDisplay tag={ i } values={comp.state.queryCmds[i]} handleUserInput={comp.rmFromQuery} />
+                    <queryTagDisplay labelStyle={labelStyle} tag={ i } values={comp.state.queryCmds[i]} handleUserInput={comp.rmFromQuery} />
                 </div>
                 )
         } )
@@ -149,8 +159,9 @@ var searchDialog = React.createClass({
                 <h3>Database selection</h3>
                 <checkboxSelection data={this.props.dbData} handleUserInput={this.toggleDB} />
                 {queryRender}
-                <hr />
-                <button type="button" onClick={this.submitSearch}><h3>Search</h3></button> {this.state.validDisplay}
+                <div className="submitArea">
+                    <button type="button" onClick={this.submitSearch}><h3>Search</h3></button> {this.state.validDisplay}
+                </div>
             </div>
 
 
@@ -302,6 +313,7 @@ var patternInput = React.createClass({
  * Props:
  *  tag:""
  *  values:""
+ *  labelStyle: label-primary label-default label-success label-info label-warning label-danger
  *  handleUserInput:
  *   function(tag, value, index)
  */
@@ -313,14 +325,13 @@ var queryTagDisplay = React.createClass({
         var values = this.props.values.map( function(i, index) {
             var clickFun = function(){comp.props.handleUserInput(tag,i,index)}
             return (
-                   <button className="label label-success" onClick={clickFun}> (-) {i} </button>
+                   <button className={"label "+comp.props.labelStyle} onClick={clickFun}> (-) {i} </button>
                 )
         } )
 
         return (
             <div>
                 <h4> {tag} </h4>
-                <hr />
                 {values}
             </div>
             )
@@ -337,9 +348,6 @@ var testComponents = function(){
         <div>
             <searchDialog orgData={dropdownTest} dbData={dbTest}/>
             <patternInput />
-            <dropdownSelection data={dropdownTest} />
-            <checkboxSelection data={dbTest} />
-            <queryTagDisplay tag="testTag" values={dropdownTest} handleUserInput={handleQTag} />
         </div>
         ,
         document.getElementById('SearchBoxComponentTest')

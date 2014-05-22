@@ -1,0 +1,37 @@
+.banner {
+    background: #741626;
+    padding: .5em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.bannerLogo {
+    width: 120px;
+    float: left;
+    padding-right: 1em;
+}
+
+.imgright {
+    margin-left: 2.5em;
+}
+
+.navButton {
+}
+
+.navButton a {
+    background-color: #ccc;
+    color:  #741626;
+}
+
+.InputContainer {
+    width: 420px;
+    margin-left: auto ;
+    margin-top: 3em;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.footerText {
+    font-size: .8em;
+    float:right
+}
