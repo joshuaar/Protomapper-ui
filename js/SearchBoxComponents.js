@@ -18,8 +18,10 @@ var searchDialog = React.createClass({
             dbToggle[this.props.dbData[i].id] = false
         }
         return {
-            queryCmds: {},
-            dbs: dbToggle
+            queryCmds: {
+            },
+            dbs: dbToggle,
+            validDisplay:""
         }
     },
 
@@ -38,6 +40,8 @@ var searchDialog = React.createClass({
         var queryBuilder = JSON.parse(JSON.stringify(this.state.queryCmds));
         console.log(key)
         queryBuilder[key].splice(index,1)
+        if(queryBuilder[key].length == 0)
+            delete queryBuilder[key]
         this.setState({queryCmds: queryBuilder} )
 
     },
@@ -60,7 +64,7 @@ var searchDialog = React.createClass({
             queryBuilder[key] = [value]
         }
         if(!wasAlreadyIn)
-            this.setState({queryCmds: queryBuilder} )
+            this.setState({queryCmds: queryBuilder, validDisplay:""} )
     },
 
     /**
@@ -74,17 +78,50 @@ var searchDialog = React.createClass({
         dbs[dbID] = dbState
         this.setState({
             queryCmds: this.state.queryCmds,
-            dbs: dbs
+            dbs: dbs,
+            validDisplay:""
         })
     },
+    isValid: function() {
+        if(this.state.queryCmds.hasOwnProperty("patterns")){
+            if(this.state.queryCmds.patterns.length > 0){
+            } else {
+                this.setState({validDisplay:"Please add at least one pattern"})
+                return false
+            }
+        } else {
+            this.setState({validDisplay:"Please add at least one pattern"})
+            return false
+        }
+        if(this.state.hasOwnProperty("dbs")){
+            var anyDBsSelected = false
+            for(i in this.state.dbs){
+                anyDBsSelected = anyDBsSelected | this.state.dbs[i]
+            }
+            if(anyDBsSelected){
 
+            } else {
+                this.setState({validDisplay:"Please add at least one database"})
+                return false
+            }
+        } else {
+            this.setState({validDisplay:"Please add at least one database"})
+            return false
+        }
+        console.log("form is valid")
+        return true
+
+    },
     submitSearch: function() {
-        this.props.handleUserInput(this.state)
+        if(this.isValid()){
+            this.props.handleUserInput(this.state)
+        } else {
+
+        }
     }
     ,
     render: function() {
         var queryItems = {}
-        console.log(JSON.stringify(this.state))
         comp = this
         var queryRender = Object.keys(this.state.queryCmds).map( function(i,ind) {
             var handler = function(index, value) {
@@ -108,12 +145,12 @@ var searchDialog = React.createClass({
                     <dropdownSelection formname="patterns" handleUserInput = {addToQueryUpper} />
                 </div>
                 <h3 className="promptext">Organism mask</h3>
-                <dropdownSelection formname="organisms" data={this.props.orgData} handleUserInput={this.addToQuery} />
+                <dropdownSelection key="1" formname="organisms" data={this.props.orgData} handleUserInput={this.addToQuery} />
                 <h3>Database selection</h3>
                 <checkboxSelection data={this.props.dbData} handleUserInput={this.toggleDB} />
                 {queryRender}
                 <hr />
-                <button type="button" onClick={this.submitSearch}><h3>Search</h3></button>
+                <button type="button" onClick={this.submitSearch}><h3>Search</h3></button> {this.state.validDisplay}
             </div>
 
 
@@ -145,7 +182,7 @@ var dropdownSelection = React.createClass({
           var isInOrgs = $.inArray(org,this.props.data)
           var nData = this.props.data.length
           console.log("handling click from text box: "+org+" "+isInOrgs + " " + nData + " " + this.props.checkInput)
-
+          this.refs.orgInput.getDOMNode().value = ""
             if(isInOrgs >= 0 || nData == 0 || !this.props.checkInput){
               this.props.handleUserInput(this.props.formname,org)
               return(false)
@@ -188,7 +225,7 @@ var dropdownSelection = React.createClass({
         },
 
         componentWillUnmount: function() {
-            $(this.refs.orgInput.getDOMNode()).remove();
+            //$(this.refs.orgInput.getDOMNode()).remove();
         }
     }
 )
@@ -276,7 +313,7 @@ var queryTagDisplay = React.createClass({
         var values = this.props.values.map( function(i, index) {
             var clickFun = function(){comp.props.handleUserInput(tag,i,index)}
             return (
-                   <button type="button" onClick={clickFun}> (-) {i} </button>
+                   <button className="label label-success" onClick={clickFun}> (-) {i} </button>
                 )
         } )
 
@@ -309,4 +346,4 @@ var testComponents = function(){
     );
 }
 
-testComponents()
+//testComponents()

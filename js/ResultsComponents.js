@@ -21,16 +21,23 @@ var resultCol = React.createClass({
 
     handleClick: function() {
         if(this.state.trimmed)
-            this.setState( {display:this.props.field, trimmed:false} )
+            this.handleMouseOn()
         if(!this.state.trimmed)
-            this.setState( this.getInitialState())
+            this.handleMouseOff()
 
+    },
+
+    handleMouseOn: function(){
+        this.setState( {display:this.props.field, trimmed:false} )
+    },
+    handleMouseOff: function(){
+      this.setState(this.getInitialState())
     },
 
     render: function() {
 
         return (
-            <td className="resultBox" style={this.props.style} onClick={this.handleClick}>
+            <td className="resultBox" style={this.props.style} onMouseEnter={this.handleMouseOn} onMouseLeave={this.handleMouseOff}>
             {this.state.display}
             </td>
             )
@@ -63,10 +70,17 @@ var resultSequenceCol = React.createClass({
 
     handleClick: function() {
         if(this.state.trimmed)
-            this.setState( {display:this.props.seq, trimmed:false} )
+            this.handleMouseOn()
         if(!this.state.trimmed)
-            this.setState( this.getInitialState())
+            this.handleMouseOff()
 
+    },
+
+    handleMouseOn: function(){
+        this.setState( {display:this.props.seq, trimmed:false} )
+    },
+    handleMouseOff: function(){
+        this.setState(this.getInitialState())
     },
 
     render: function() {
@@ -80,7 +94,7 @@ var resultSequenceCol = React.createClass({
 
         return (
 
-            <td onClick={this.handleClick}>
+            <td onMouseEnter={this.handleMouseOn} onMouseLeave={this.handleMouseOff}>
                 <div className="resultBox seqBox" style={this.props.style}>
                     {highlightRegex(this.state.display,this.props.optRegex)}
                 </div>
@@ -111,13 +125,15 @@ var resultRow = React.createClass({
     getDefaultProps: function() {
         return {
             style: {
-                width:"100px",
+                width:"140px",
                 fontSize:".7em"
                // height:"40px"
             },
             seqStyle:{
                 width:"400px",
-                fontFamily:"monospace"
+                fontFamily:"monospace",
+                fontSize:".85em"
+
                // height:"40px"
             },
             maxchars:15
@@ -146,15 +162,17 @@ var resultRow = React.createClass({
 
 /**
  *  Props:
+ *  data: {
  *   rows: [{},...]
  *   query: ""
  *   headers: []
+ *  }
  */
 var resultTable = React.createClass({
 
     render: function() {
         var comp = this
-        var tableHeaders = this.props.headers.map(function(i){
+        var tableHeaders = this.props.data.headers.map(function(i){
             return(
                 <td>
                     {i}
@@ -162,8 +180,10 @@ var resultTable = React.createClass({
                 )
         })
 
-        var tableRows = this.props.rows.map( function(rowData) {
-            return (<resultRow row={rowData} query={comp.props.query} />)
+        var tableRows = this.props.data.rows.map( function(rowData,index) {
+            console.log(rowData.id)
+            console.log(rowData)
+            return (<resultRow key={"result-"+index} row={rowData} query={comp.props.data.query} />)
         })
 
         return (
@@ -178,27 +198,165 @@ var resultTable = React.createClass({
 
 })
 
+/**
+ * Props:
+ *  getPagedData(page,nPerPage,callback)
+ *  nTotal: int
+ * state:
+ *  data: the table data
+ *  page: the current page
+ * @type {*}
+ */
+var pageTable = React.createClass({
+
+    getDefaultProps: function() {
+        return {
+            nPerPage: 50,
+            nPagesToDisplay:10
+        }
+    },
+
+    getInitialState: function(){
+        return {
+            data: {rows:[],query:"",headers:[]},
+            page:1
+        }
+    },
+
+    callback: function(newData, newPage){
+        this.setState({data:newData, page:newPage})
+        this.forceUpdate()
+        console.log("new page " +newPage)
+        console.log(this.state)
+    },
+
+    componentDidMount: function(){
+        console.log(this.props.nPerPage)
+        this.props.getPagedData(this.state.page,this.props.nPerPage,this.callback.bind(this))
+    },
+
+    handlePageChange: function(pageNo){
+        this.props.getPagedData(pageNo, this.props.nPerPage, this.callback.bind(this))
+    },
+
+    render:function(){
+        console.log(this.state.data.rows)
+        rTableFn = function(){ return resultTable({data:this.state.data, key:"table-"+this.state.page})}.bind(this)
+        return (
+            <div>
+                <rTableFn />
+                <pager nTotal={this.props.nTotal} pageNo={this.state.page} nPerPage={this.props.nPerPage} nPagesToDisplay={this.props.nPagesToDisplay} handleUserInput={this.handlePageChange} />
+            </div>
+            )
+    }
+})
+
+/**
+ * Props:
+ *  handleUserInput: function(pageNo)
+ *  pageNo: int     // current page number
+ *  nTotal: int     // total number of results
+ *  nPerPage: int   // number of results to display on a page
+ *  nPagesToDisplay: int  //number of pages to display on paginator
+ *
+ */
+var pager = React.createClass({
+
+    getInitialState: function() {
+        var currentPage = this.props.pageNo
+        console.log(this.props.pageNo)
+        return this.setCurrentPageState(currentPage)
+    },
+
+    getMaxPage: function(){return Math.ceil(this.props.nTotal/this.props.nPerPage)},
+
+    setCurrentPageState: function(pageNumber) {  //such an unholy mess. This is where new page data goes to die/get rendered
+        var currentPage = parseInt(pageNumber)
+        var nPerPage = parseInt(this.props.nPagesToDisplay)
+        var maxPage = parseInt(this.getMaxPage())
+        var possibleMax = currentPage + nPerPage - Math.ceil(0.5*nPerPage+1)
+        var maxPage = Math.min( maxPage, possibleMax )
+        var minPage = Math.max(currentPage - nPerPage + Math.floor(0.5*nPerPage+1)  , 1)
+        if(maxPage < nPerPage & maxPage < this.getMaxPage())
+            maxPage = nPerPage
+        if(minPage > Math.max(this.getMaxPage() - nPerPage,1) )
+            minPage = Math.max(this.getMaxPage() - nPerPage + 1,1)
+        var currentPages = []
+        maxPage = Math.min(minPage + nPerPage - 1,this.getMaxPage())
+        for(i=minPage;i<=maxPage;i++)
+            currentPages.push(i)
+        console.log(currentPage)
+        sliceMarginUpper = Math.ceil(0.2*nPerPage)
+        sliceMarginLower = nPerPage - sliceMarginUpper
+
+        console.log("current page: "+ currentPage)
+        console.log("max page func: "+ this.getMaxPage())
+        console.log("n per page: "+ nPerPage)
+        console.log("min page: "+ minPage)
+        console.log("max page: " + maxPage)
+        return {currentPage:currentPage,currentPages:currentPages}
+    },
+
+    handleChange: function(event){ //someone clicked a pagination button
+        var pageToNum = parseInt(event.target.text)
+        this.props.handleUserInput(pageToNum)
+        return false;
+    },
+
+    render: function() {
+        comp = this
+        console.log("pToDisplay: "+this.state.currentPages)
+        var listItems = this.state.currentPages.map(function(i){
+
+        return <li><a number={i} href="#" onClick={comp.handleChange}>{i}</a></li>
+
+        })
+
+        var gotoFirstPage = function(){this.props.handleUserInput(1); return false}
+        var gotoLastPage = function(){this.props.handleUserInput(this.getMaxPage()); return false}
+
+    return(
+            <ul className="pagination">
+                <li><a href="#" onClick={gotoFirstPage.bind(this)}>&laquo;</a></li>
+                    {listItems}
+                <li><a href="#" onClick={gotoLastPage.bind(this)}>&raquo;</a></li>
+            </ul>
+        )
+
+    }
+})
+
 var seqTest = "AVHADHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAVHADHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDFAVHAHAHAHAFAFAFAFYVYVYVYVYDFDFDFDFDF"
 var result = {seq:seqTest,acc:"YPGAKKASDKG",org:"Porginizm34",desc:"porganism dsecription asdasdasdasd asdasdasdasdasd asdasdasd",db:"customDB"}
+var result2 = {seq:seqTest,acc:"YPGasdasdsssAKKASDKG",org:"Porginizm3asddw2344",desc:"porganism dsecription asdasNASDIGA GAGES GSEGSRR RSDHHasdasdasd asdasdasd",db:"customDB22"}
+
 var query = "AVHAD"
 var header = ["Accession","Organism","Sequence","Description","Database"]
+tableData = {rows:[result,result,result,result,result,result2,result2,result2,result2,result], query:"AVHAD", headers:header}
 
+getPagedData = function(page,nPerPage,callback) {
+    var from = (page-1)*nPerPage
+    var to = (page)*nPerPage
+    console.log(nPerPage)
+    console.log(page)
+    console.log(from)
+    console.log(to)
+    newRows = tableData.rows.slice(from,to)
+    newTableData = JSON.parse(JSON.stringify(tableData))
+    newTableData.rows=newRows
+    //console.log(newRows)
+
+    callback(newTableData,page)
+}
 
 var testResultComponents = function(){
     React.renderComponent(
         <div>
-            <resultSequenceCol seq={seqTest} optRegex={"AVHAD"} />
-            <br />
-            <table>
-                <resultRow row={result} query={"AVHAD"} />
-            </table>
-            <resultTable rows={[result,result,result]} query={"AVHAD"} headers={header} />
+            <pageTable getPagedData={getPagedData} nTotal={tableData.rows.length} nPerPage={3} />
         </div>
-
-
         ,
         document.getElementById('ResultsComponentTest')
     );
 }
 
-testResultComponents()
+//testResultComponents()
