@@ -231,7 +231,10 @@ var dropdownSelection = React.createClass({
             };
 
             $(this.refs.orgInput.getDOMNode()).autocomplete({
-                source: this.props.data
+                source: this.props.data,
+		delay: 600,
+		disabled: false,
+		minLength: 3
             })
         },
 
