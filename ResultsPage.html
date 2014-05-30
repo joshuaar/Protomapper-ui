@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Protomapper Search</title>
+    <title>Protomapper-Search - Results</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
 
     <link rel="stylesheet" type="text/css" href="css/GraphComponents.css">
     <link rel="stylesheet" type="text/css" href="css/ResultsComponents.css">
@@ -21,49 +17,30 @@
     <link
             rel="stylesheet"
             href="http://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="http://fb.me/react-0.10.0.js"></script>
     <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/backbone.js"></script>
     <script type="text/jsx" src="js/GraphComponents.js"></script>
     <script type="text/jsx" src="js/ResultsComponents.js"></script>
     <script type="text/jsx" src="js/SearchBoxComponents.js"></script>
     <script type="text/jsx" src="js/InputPage.js"></script>
     <script type="text/jsx" src="js/ResultsPage.js"></script>
-    <script type="text/jsx" src="js/MainPage.js"></script>
+
     <link rel="stylesheet" href="css/nv.d3.css">
     <!-- D3 and NV for pie graph -->
     <script src="js/d3.v2.js"></script>
     <script src="js/nv.d3.js"></script>
 
     <script src="js/jquery-ui.min.js"></script>
+
 </head>
 <body>
-<div class="banner">
-    <img src="img/bd_rev.png" class="bannerLogo">
-    <ul class="nav nav-pills navButton">
-        <li><a href="/">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="http://github.com/joshuaar/Protomapper-Serve">Github</a></li>
-    </ul>
-</div>
-<div class="OuterContainer">
 
-
-    <div class="InputContainer">
-
-    </div>
-
-    <div id="MainPage"></div>
-
-    <div class="InputContainer">
-
-        <hr />
-
-        &copy; 2014 <a href="http://www.biodesign.asu.edu/research/research-centers/innovations-in-medicine" >Center for Innovations in Medicine </a>, Arizona State University
-    </div>
-</div>
-
+        <div id="ResultsPage"></div>
 </body>
 </html>

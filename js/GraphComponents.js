@@ -62,7 +62,7 @@ var PieGraph = React.createClass({
             var chart = nv.models.pieChart()
                 .x(function(d) { return d.label })
                 .y(function(d) { return d.value })
-                .showLabels(true);
+                .showLabels(false);
 
             d3.select(".chart svg")
                 .datum(plotdata)

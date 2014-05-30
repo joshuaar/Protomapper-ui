@@ -1,8 +1,11 @@
 .chart svg {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 500px;
+    margin-left: auto ;
+    margin-top: 1em;
+    margin-bottom: auto;
+    margin-right: auto;
 }
 
 .chart svg:hover {
-    outline: thin solid black;
 }

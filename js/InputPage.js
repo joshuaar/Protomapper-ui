@@ -10,6 +10,7 @@ var dbURL = fieldURL("db")
  * Props:
  *  orgsURL: String
  *  dbURL: String
+ *  handleSubmit: function(queryCmds) see SearchDialog in SearchBoxComponents.js for function arguments
  * state:
  *  orgsItems: fetch with ajax
  *  dbItems: fetch with ajax
@@ -45,7 +46,7 @@ var InputPage = React.createClass({
         var nThings = this.state.orgsItems.length + this.state.dbItems.length
         return (
             <div>
-                <searchDialog key={"SD-"+nThings} orgData={this.state.orgsItems} dbData={this.state.dbItems}/>
+                <searchDialog handleUserInput={this.props.handleSubmit} key={"SD-"+nThings} orgData={this.state.orgsItems} dbData={this.state.dbItems}/>
             </div>
 
             )
@@ -66,4 +67,4 @@ var testComponents = function(){
     );
 }
 
-testComponents()
+//testComponents()

@@ -86,6 +86,7 @@ var resultSequenceCol = React.createClass({
     render: function() {
 
         var highlightRegex = function(item,regex) {
+            regex = regex.replace("^","|")
             var re = new RegExp("(" + regex + ")", "gi") ;
             var t = item.replace(re,"<b style='color:red'>$1</b>");
             var t = <div dangerouslySetInnerHTML={{__html: t}} />
@@ -202,6 +203,8 @@ var resultTable = React.createClass({
  * Props:
  *  getPagedData(page,nPerPage,callback)
  *  nTotal: int
+ *  nPerPage: Int
+ *  nPagesToDisplay: Int
  * state:
  *  data: the table data
  *  page: the current page
@@ -300,6 +303,7 @@ var pager = React.createClass({
     handleChange: function(event){ //someone clicked a pagination button
         var pageToNum = parseInt(event.target.text)
         this.props.handleUserInput(pageToNum)
+        this.setState(this.setCurrentPageState(pageToNum))
         return false;
     },
 
@@ -312,8 +316,8 @@ var pager = React.createClass({
 
         })
 
-        var gotoFirstPage = function(){this.props.handleUserInput(1); return false}
-        var gotoLastPage = function(){this.props.handleUserInput(this.getMaxPage()); return false}
+        var gotoFirstPage = function(){this.handleChange({target:{text:1}}); return false}.bind(this)
+        var gotoLastPage = function(){this.handleChange({target:{text:this.getMaxPage()}}); return false}.bind(this)
 
     return(
             <ul className="pagination">
