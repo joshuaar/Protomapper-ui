@@ -60,7 +60,7 @@ MainPage = React.createClass({
                         <hr />
                     </div>
                     <div className="ResultsContainer">
-                        <ResultsPage queryJSON={this.state.queryJSON} nPerPage={10} request={request}/>
+                        <ResultsPage queryJSON={this.state.queryJSON} nPerPage={50} request={request}/>
                     </div>
                 </div>
                 )

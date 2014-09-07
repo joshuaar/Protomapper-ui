@@ -3,6 +3,63 @@
  */
 
 
+
+
+/**
+ *  Props:
+ *   linkURLs: {displayName:url,...}
+ *   seq: String
+ *   style: {width:x, fontFamily="y"} camel cased
+ *   maxchars: int
+ */
+var resultColLinks = React.createClass({
+
+    trimSeq: function(seq) {
+        return seq.length > this.props.maxchars ? seq.slice(0,this.props.maxchars) + " ..." : seq
+    },
+
+    handleClick: function() {
+        if(this.state.trimmed)
+            this.handleMouseOn()
+        if(!this.state.trimmed)
+            this.handleMouseOff()
+
+    },
+
+    handleMouseOn: function(){
+        this.setState( {display:this.props.field, trimmed:false} )
+    },
+    handleMouseOff: function(){
+        this.setState(this.getInitialState())
+    },
+
+    render: function() {
+        var links = []
+
+        var form = <form enctype="multipart/form-data" action="http://www.cbs.dtu.dk/cgi-bin/webface2.fcgi" method="POST">
+            <input className="hiddenObj" name="configfile" value="/usr/opt/www/pub/CBS/services/BepiPred-1.0/BepiPred.cf" />
+
+
+                        <textarea className="hiddenObj" name="SEQPASTE" rows="3" cols="64" value={this.props.seq}> </textarea>
+
+                                            <input className="hiddenObj" name="threshold" type="text" value="0.35" size="5" />
+
+                                                        <input type="submit" value="BepiPred" />
+
+                                                        </form>
+
+        for(i in this.props.linkURLs){
+            links.push( <a href={this.props.linkURLs[i]}>{i}</a> )
+        }
+        return (
+            <td className="resultBox" style={this.props.style}>
+            {links}
+            {form}
+            </td>
+            )
+    }
+})
+
 /**
  *  Props:
  *   field: ""
@@ -37,7 +94,7 @@ var resultCol = React.createClass({
     render: function() {
 
         return (
-            <td className="resultBox" style={this.props.style} onMouseEnter={this.handleMouseOn} onMouseLeave={this.handleMouseOff}>
+            <td className="resultBox" style={this.props.style} onClick={this.handleClick}>
             {this.state.display}
             </td>
             )
@@ -95,7 +152,7 @@ var resultSequenceCol = React.createClass({
 
         return (
 
-            <td onMouseEnter={this.handleMouseOn} onMouseLeave={this.handleMouseOff}>
+            <td onClick={this.handleClick}>
                 <div className="resultBox seqBox" style={this.props.style}>
                     {highlightRegex(this.state.display,this.props.optRegex)}
                 </div>
@@ -126,7 +183,7 @@ var resultRow = React.createClass({
     getDefaultProps: function() {
         return {
             style: {
-                width:"140px",
+                width:"220px",
                 fontSize:".7em"
                // height:"40px"
             },
@@ -145,8 +202,7 @@ var resultRow = React.createClass({
     },
 
     render: function() {
-
-
+        var linkURLs = {"uniprot":"http://www.uniprot.org/uniprot/"+this.props.row.acc}
         return (
     <tr className="resultRow" onClick={this.handleClick}>
             <resultCol field={this.props.row.acc} style={this.props.style} maxchars={this.props.maxchars} />
@@ -154,6 +210,7 @@ var resultRow = React.createClass({
             <resultSequenceCol seq={this.props.row.seq} optRegex={this.props.query} style={this.props.seqStyle} />
             <resultCol field={this.props.row.desc} style={this.props.style} maxchars={this.props.maxchars} />
             <resultCol field={this.props.row.db} style={this.props.style} maxchars={this.props.maxchars} />
+            <resultColLinks linkURLs={linkURLs} seq={this.props.row.seq} style={this.props.style} maxchars={this.props.maxchars} />
     </tr>
         )
 
@@ -364,3 +421,4 @@ var testResultComponents = function(){
 }
 
 //testResultComponents()
+

@@ -84,7 +84,7 @@ var ResultsPage = React.createClass({
                 var end = (page * nPerPage)
                 this.props.queryJSON.range = [start,end]
                 this.props.request(this.props.queryJSON, function(rawResults){
-                    var header = ["Accession","Organism","Sequence","Description","Database"]
+                    var header = ["Accession","Organism","Sequence","Description","Database","Links"]
                     var rawResultsJSON = JSON.parse(rawResults)
                     //var result = {seq:seqTest,acc:"YPGAKKASDKG",org:"Porginizm34",desc:"porganism dsecription asdasdasdasd asdasdasdasdasd asdasdasd",db:"customDB"}
                     //tableData = {rows:[result,result,result,result,result,result2,result2,result2,result2,result], query:"AVHAD", headers:header}
@@ -125,7 +125,7 @@ var ResultsPage = React.createClass({
 var testComponents = function(){
     var qjson = {query:["AVH"], range:[0,10], db:[], orgsList:[]}
     React.renderComponent(
-        <ResultsPage queryJSON={qjson} nPerPage={10} request={request}/>
+        <ResultsPage queryJSON={qjson} nPerPage={50} request={request}/>
 
                ,
         document.getElementById('ResultsPage')
